@@ -53,6 +53,8 @@ module.exports = {
   devServer: {
     port: 3000,
     hot: isDev,
+    contentBase: path.join(__dirname, 'src'),
+    watchContentBase: true,
   },
   plugins: [
     new CleanWebpackPlugin(),
