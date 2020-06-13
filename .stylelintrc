@@ -1,0 +1,145 @@
+{
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-order",
+    "stylelint-declaration-use-variable",
+    "stylelint-declaration-block-no-ignored-properties",
+    "stylelint-high-performance-animation"
+  ],
+  "extends": "stylelint-config-recommended-scss",
+  "rules": {
+    "block-no-empty": null,
+    "color-no-invalid-hex": true,
+    "indentation": 2,
+    "string-quotes": "double",
+    "comment-empty-line-before": [
+      "always",
+      {
+        "ignore": [
+          "stylelint-commands",
+          "after-comment"
+        ]
+      }
+    ],
+    "declaration-colon-space-before": "never",
+    "declaration-colon-space-after": "always",
+    "no-descending-specificity": null,
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "first-nested"
+        ],
+        "ignore": [
+          "after-comment"
+        ]
+      }
+    ],
+    "max-nesting-depth": [
+      4,
+      {
+        "ignore": [
+          "pseudo-classes",
+          "blockless-at-rules"
+        ]
+      }
+    ],
+    "scss/dollar-variable-colon-space-after": "always",
+    "unit-whitelist": [
+      "px",
+      "rem",
+      "%",
+      "vh",
+      "vw",
+      "deg",
+      "s",
+      "ms",
+      "fr"
+    ],
+    "selector-class-pattern": "^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$",
+    "order/properties-order": [
+      "position",
+      "z-index",
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "display",
+      "order",
+      "flex",
+      "flex-basis",
+      "flex-order",
+      "flex-grow",
+      "flex-shrink",
+      "justify-content",
+      "align-items",
+      "float",
+      "width",
+      "height",
+      "margin",
+      "padding",
+      "color",
+      "font",
+      "font-weight",
+      "line-height",
+      "text-align",
+      "background",
+      "background-color",
+      "border",
+      "border-radius",
+      "opacity",
+      "transition",
+      "user-select"
+    ],
+    "order/order": [
+      "declarations",
+      {
+        "type": "at-rule",
+        "name": "media"
+      },
+      {
+        "type": "rule",
+        "selector": "^&::(before|after)"
+      },
+      {
+        "type": "rule",
+        "selector": "^&:\\w"
+      },
+      {
+        "type": "rule",
+        "selector": "^&_"
+      },
+      {
+        "type": "rule",
+        "selector": "^."
+      }
+    ],
+    "sh-waqar/declaration-use-variable": [
+      [
+        "/color/",
+        "fill",
+        {
+          "ignoreValues": [
+            "transparent",
+            "inherit",
+            "none",
+            "/regexForspecialFunc/",
+            "/^darken/",
+            "/^rgba/"
+          ]
+        }
+      ]
+    ],
+    "plugin/declaration-block-no-ignored-properties": true,
+    "plugin/no-low-performance-animation-properties": [
+      true,
+      {
+        "ignoreProperties": [
+          "height",
+          "position",
+          "color"
+        ]
+      }
+    ]
+  }
+}
