@@ -16,21 +16,26 @@ function toChar(_, index) {
 /**
  * @description
  * @param {String} char
+ * @param {Number} index
  * @return {String}
  */
-function createColumn(char) {
-  return `<div class="column">
+function createColumn(char, index) {
+  return `<div class="column" data-type="resizable" data-order-number="${index}">
             ${char}
+            <span class="resizer resizer--column" data-resizer="column" >
+              <span class="resizer__slider" />
+            </span>
           </div>`;
 }
 
 /**
  * @description
  * @param {String} content
+ * @param {Number} index
  * @return {String}
  */
-function createCell(content) {
-  return `<div class="cell" contenteditable>${content}</div>`;
+function createCell(content, index) {
+  return `<div class="cell" data-type="cell-${index}" contenteditable>${content}</div>`;
 }
 
 /**
@@ -40,8 +45,17 @@ function createCell(content) {
  * @return {String}
  */
 function createRow(index = '', content) {
-  return `<div class="row">
-            <div class="row-info">${index}</div>
+  const resizer = index ?
+    `<span class="resizer resizer--row" data-resizer="row" >
+      <span class="resizer__slider" />
+    </span >` :
+    '';
+
+  return `<div class="row" data-type="resizable" >
+            <div class="row-info">
+              ${index}
+              ${resizer}
+            </div>
             <div class="row-data">${content}</div>
           </div>`;
 }

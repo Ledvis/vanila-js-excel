@@ -12,26 +12,25 @@ export default class Listener {
    * @param {Array.<string>} [listeners=[]]
    * @memberof Listener
    */
-  constructor(root, { name, listeners = [] }) {
+  constructor(root, listeners = []) {
     if (!root) throw new Error('root is not provided');
 
     this.$root = root;
     this.listeners = listeners;
-    this.#componentName = name;
   }
-
-  #componentName
 
   /**
    * @description
    * @memberof Listener
    */
-  addListener() {
+  addListeners() {
+    if (!this.listeners.length) return;
+
     this.listeners.forEach((listener) => {
       const handlerName = getHandlerName(listener);
 
       if (!this[handlerName]) {
-        throw new Error(`${listener} handler is not provided for ${this.#componentName} component`);
+        throw new Error(`${listener} handler is not provided for ${this.componentName} component`);
       }
 
       this[handlerName] = this[handlerName].bind(this);
@@ -51,6 +50,18 @@ export default class Listener {
     this.listeners.splice(listenerIndex, 1);
 
     this.$root.off(listener, this[handlerName]);
+  }
+
+  /**
+   * @description
+   * @memberof Listener
+   */
+  removeAllListeners() {
+    this.listeners.forEach((_listener) => {
+      const handlerName = getHandlerName(_listener);
+
+      this.$root.off(_listener, this[handlerName]);
+    });
   }
 }
 

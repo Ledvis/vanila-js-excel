@@ -10,11 +10,15 @@ export default class Base extends Listener {
   /**
    *Creates an instance of Base.
    * @param {Object} root
-   * @param {*} [options={}]
+   * @param {Object} [options={}]
+   * @param {Object.<string, string>} options.name
+   * @param {Object.<string, Array>} options.listeners
    * @memberof Base
    */
   constructor(root, options = {}) {
-    super(root, options);
+    super(root, options.listeners);
+
+    this.componentName = options.name;
   }
 
   /**
@@ -22,6 +26,6 @@ export default class Base extends Listener {
    * @memberof Base
    */
   initListeners() {
-    this.addListener();
+    this.addListeners();
   }
 }

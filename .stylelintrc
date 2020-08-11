@@ -7,6 +7,9 @@
     "stylelint-high-performance-animation"
   ],
   "extends": "stylelint-config-recommended-scss",
+  "ignoreFiles": [
+    "**/*.js"
+  ],
   "rules": {
     "block-no-empty": null,
     "color-no-invalid-hex": true,
