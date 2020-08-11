@@ -30,19 +30,19 @@ export default class Excel {
    * @memberof Excel
    */
   getRoot() {
-    const rootEl = $.create('div', 'excel');
+    const $rootEl = $.create('div', 'excel');
 
     this.components = this.components.map((Component, index) => {
-      const childEl = $.create('div', Component.className);
-      const childComponent = new Component(childEl);
+      const $childEl = $.create('div', Component.className);
+      const childComponent = new Component($childEl);
 
-      childEl.html(childComponent.toHTML());
-      rootEl.append(childEl);
+      $childEl.html(childComponent.toHTML());
+      $rootEl.append($childEl);
 
       return childComponent;
     });
 
-    return rootEl;
+    return $rootEl;
   }
 
   /**

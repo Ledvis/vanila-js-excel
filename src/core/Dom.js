@@ -12,7 +12,7 @@ class Dom {
     /**
      * @property {HTMLElement}
      */
-    this.$el = typeof selector === 'string' ? document.querySelector(selector) : selector;
+    this.el = typeof selector === 'string' ? document.querySelector(selector) : selector;
   }
 
   /**
@@ -22,12 +22,12 @@ class Dom {
    * @memberof Dom
    */
   append(node) {
-    if ('$el' in node) node = node.$el;
+    if ('el' in node) node = node.el;
 
     if (Element.prototype.append) {
-      this.$el.append(node);
+      this.el.append(node);
     } else {
-      this.$el.appendChild(node);
+      this.el.appendChild(node);
     }
 
     return this;
@@ -35,13 +35,13 @@ class Dom {
 
   /**
    * @description
-   * @param {(string | null)} [html='']
-   * @return {(Object | string)}
+   * @param {(String | Undefined)} [html='']
+   * @return {(Object | String)}
    * @memberof Dom
    */
   html(html = '') {
     if (typeof html === 'string') {
-      this.$el.innerHTML = html;
+      this.el.innerHTML = html;
       return this;
     } else {
       return this.innerHTML;
@@ -61,22 +61,97 @@ class Dom {
 
   /**
    * @description
-   * @param {string} eventType
-   * @param {function} cb
+   * @param {String} eventType
+   * @param {Function} cb
+   * @return {Object}
    * @memberof Dom
    */
   on(eventType, cb) {
-    this.$el.addEventListener(eventType, cb);
+    this.el.addEventListener(eventType, cb);
+
+    return this;
   }
 
   /**
    * @description
    * @param {string} eventType
    * @param {function} cb
+   * @return {Object}
    * @memberof Dom
    */
   off(eventType, cb) {
-    this.$el.removeEventListener(eventType, cb);
+    this.el.removeEventListener(eventType, cb);
+
+    return this;
+  }
+
+  /**
+   * @description
+   * @param {String} selector
+   * @return {Object}
+   * @memberof Dom
+   */
+  closest(selector) {
+    return $(this.el.closest(selector));
+  }
+
+  /**
+   * @description
+   * @return {DOMRect}
+   * @memberof Dom
+   */
+  position() {
+    return this.el.getBoundingClientRect();
+  }
+
+  /**
+   * @description
+   * @return {Object}
+   * @memberof Dom
+   */
+  children() {
+    return this.el.children;
+  }
+
+  /**
+   * @description
+   * @readonly
+   * @memberof Dom
+   */
+  get data() {
+    if (!this.el.dataset) throw new Error('Data attribute should be provided on html tag');
+
+    return this.el.dataset;
+  }
+
+  /**
+   * @description
+   * @param {String} selector
+   * @return {NodeList}
+   * @memberof Dom
+   */
+  findAll(selector) {
+    return this.el.querySelectorAll(selector);
+  }
+
+  /**
+   * @description
+   * @param {Object} [style={}]
+   * @return {Object}
+   * @memberof Dom
+   */
+  css(style) {
+    if (typeof style === 'object') {
+      for (const key in style) {
+        if (key in style) {
+          this.el.style[key] = style[key];
+        }
+      }
+
+      return this;
+    } else {
+      return this.el.style;
+    }
   }
 }
 
