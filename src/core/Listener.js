@@ -15,6 +15,9 @@ export default class Listener {
   constructor(root, listeners = []) {
     if (!root) throw new Error('root is not provided');
 
+    /**
+     * @type {Object} root object
+     */
     this.$root = root;
     this.listeners = listeners;
   }

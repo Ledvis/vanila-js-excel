@@ -71,6 +71,7 @@
     background-color: $primary;
     opacity: 0;
     
+    // TODO: fix horizontal click area
     &::after {
       content: "";
       position: absolute;
