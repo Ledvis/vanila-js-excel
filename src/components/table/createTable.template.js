@@ -30,12 +30,12 @@ function createColumn(char, index) {
 
 /**
  * @description
- * @param {String} content
- * @param {Number} index
+ * @param {Number} rowNumber
  * @return {String}
  */
-function createCell(content, index) {
-  return `<div class="cell" data-type="cell-${index}" contenteditable>${content}</div>`;
+function createCell(rowNumber) {
+  return (content, index) =>
+    `<div class="cell" data-type="cell-${index}" data-id="${rowNumber}:${index}" contenteditable>${content}</div>`;
 }
 
 /**
@@ -63,17 +63,17 @@ function createRow(index = '', content) {
 /**
  * @description
  * @export
- * @param {number} [rowsCount=15]
+ * @param {number} [rowsCount]
  * @return {String}
  */
-export function createTable(rowsCount = 15) {
+export function createTable(rowsCount) {
   const columnsCount = CODES.Z - CODES.A + 1;
   const columns = new Array(columnsCount).fill('').map(toChar).map(createColumn).join('');
   const rows = [];
   rows.push(createRow('', columns));
 
   for (let index = 0; index < rowsCount; index++) {
-    const cells = new Array(columnsCount).fill('').map(createCell).join('');
+    const cells = new Array(columnsCount).fill('').map(createCell(index)).join('');
 
     rows.push(createRow(index + 1, cells));
   }

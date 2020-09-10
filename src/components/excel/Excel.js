@@ -1,4 +1,5 @@
 import { $ } from '@/core/Dom';
+import Observer from '@/core/Observer';
 
 /**
  * @description
@@ -9,7 +10,7 @@ export default class Excel {
   /**
    *Creates an instance of Excel.
    * @param {string} selector - DOM selector
-   * @param {Object} [options]
+   * @param {Object.<string, *>} options
    * @param {Object.<string, Array>} options.components - composition components Class
    * @memberof Excel
    */
@@ -22,6 +23,7 @@ export default class Excel {
      * @property {Array}
      */
     this.components = options.components || [];
+    this.observer = new Observer();
   }
 
   /**
@@ -31,10 +33,13 @@ export default class Excel {
    */
   getRoot() {
     const $rootEl = $.create('div', 'excel');
+    const options = {
+      observer: this.observer,
+    };
 
     this.components = this.components.map((Component, index) => {
       const $childEl = $.create('div', Component.className);
-      const childComponent = new Component($childEl);
+      const childComponent = new Component($childEl, options);
 
       $childEl.html(childComponent.toHTML());
       $rootEl.append($childEl);
@@ -52,6 +57,22 @@ export default class Excel {
   render() {
     this.$el.append(this.getRoot());
 
-    this.components.forEach((component) => component.initListeners());
+    this.mounted();
+  }
+
+  /**
+   * @description
+   * @memberof Excel
+   */
+  mounted() {
+    this.components.forEach((component) => component.mounted());
+  }
+
+  /**
+   * @description
+   * @memberof Excel
+   */
+  destroyed() {
+    this.components.forEach((component) => component.destroyed());
   }
 }

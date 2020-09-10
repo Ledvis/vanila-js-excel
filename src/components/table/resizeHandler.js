@@ -9,10 +9,10 @@ const RESIZER_ROW = 'row';
  * @description
  * @export
  * @param {Object} $root
- * @param {Event} event
+ * @param {HTMLElement} target
  */
-export default function($root, event) {
-  const $resizer = $(event.target);
+export default function($root, target) {
+  const $resizer = $(target);
   const $parent = $resizer.closest('[data-type="resizable"]');
   const $slider = $($resizer.children());
   $slider.el = $slider.el.length === 1 ? $slider.el[0] : $slider.el;

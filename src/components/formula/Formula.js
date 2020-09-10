@@ -1,5 +1,7 @@
 import Base from '@/core/Base';
 
+const ALLOWED_KEYBOARD_KEYS = ['Enter', 'Tab'];
+
 /**
  * @description
  * @export
@@ -9,16 +11,29 @@ export default class Formula extends Base {
   /**
    *Creates an instance of Formula.
    * @param {Object} root
+   * @param {Object.<string, *>} options
    * @memberof Formula
    */
-  constructor(root) {
+  constructor(root, options) {
     super(root, {
-      listeners: ['input', 'click'],
+      listeners: ['input', 'keydown'],
       name: 'Formula',
+      ...options,
     });
   }
 
   static className = 'excel__formula'
+
+  /**
+   * @description
+   * @memberof Formula
+   */
+  mounted() {
+    super.mounted();
+    this.$input = this.$root.find('.input');
+
+    this.$on('table:input', (text) => this.$input.text(text));
+  }
 
   /**
    * @description
@@ -38,7 +53,7 @@ export default class Formula extends Base {
    * @memberof Formula
    */
   onInput(event) {
-    console.log(event);
+    this.$emit('formula:input', event.target.textContent, 'test', 30);
   }
 
   /**
@@ -46,7 +61,11 @@ export default class Formula extends Base {
    * @param {Event} event
    * @memberof Formula
    */
-  onClick(event) {
-    console.log(event);
+  onKeydown(event) {
+    if (ALLOWED_KEYBOARD_KEYS.includes(event.key)) {
+      event.preventDefault();
+
+      this.$emit('formula:enter');
+    }
   }
 }

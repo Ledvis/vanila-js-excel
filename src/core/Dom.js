@@ -11,7 +11,10 @@ class Dom {
   constructor(selector) {
     /**
      * @property {HTMLElement}
-     */
+    */
+
+    if (selector === null) throw new Error('DOM selector can\'t be null');
+
     this.el = typeof selector === 'string' ? document.querySelector(selector) : selector;
   }
 
@@ -39,12 +42,27 @@ class Dom {
    * @return {(Object | String)}
    * @memberof Dom
    */
-  html(html = '') {
+  html(html) {
     if (typeof html === 'string') {
       this.el.innerHTML = html;
       return this;
     } else {
       return this.innerHTML;
+    }
+  }
+
+  /**
+   * @description
+   * @param {String} content
+   * @return {(Object | String)}
+   * @memberof Dom
+   */
+  text(content) {
+    if (typeof content === 'string') {
+      this.el.textContent = content;
+      return this;
+    } else {
+      return this.el.textContent;
     }
   }
 
@@ -130,8 +148,29 @@ class Dom {
    * @return {NodeList}
    * @memberof Dom
    */
+  find(selector) {
+    return $(this.el.querySelector(selector));
+  }
+
+  /**
+   * @description
+   * @param {String} selector
+   * @return {NodeList}
+   * @memberof Dom
+   */
   findAll(selector) {
     return this.el.querySelectorAll(selector);
+  }
+
+  /**
+   * @description
+   * @return {Object}
+   * @memberof Dom
+   */
+  focus() {
+    this.el.focus();
+
+    return this;
   }
 
   /**
@@ -152,6 +191,40 @@ class Dom {
     } else {
       return this.el.style;
     }
+  }
+
+  /**
+   * @description
+   * @param {String} className
+   * @memberof Dom
+   * @return {Object}
+   */
+  addClass(className) {
+    this.el.classList.add(className);
+
+    return this;
+  }
+
+  /**
+   * @description
+   * @param {String} className
+   * @memberof Dom
+   * @return {Object}
+   */
+  removeClass(className) {
+    this.el.classList.remove(className);
+
+    return this;
+  }
+
+  /**
+   * @description
+   * @param {String} className
+   * @memberof Dom
+   * @return {Boolean}
+   */
+  hasClass(className) {
+    return this.el.classList.contains(className);
   }
 }
 
