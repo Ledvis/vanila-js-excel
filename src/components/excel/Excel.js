@@ -24,6 +24,7 @@ export default class Excel {
      */
     this.components = options.components || [];
     this.observer = new Observer();
+    this.store = options.store;
   }
 
   /**
@@ -35,6 +36,7 @@ export default class Excel {
     const $rootEl = $.create('div', 'excel');
     const options = {
       observer: this.observer,
+      store: this.store,
     };
 
     this.components = this.components.map((Component, index) => {

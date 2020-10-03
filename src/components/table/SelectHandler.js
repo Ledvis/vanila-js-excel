@@ -106,14 +106,13 @@ export class SelectHandler {
   select(target) {
     this.unselectAll();
 
-    const $target = this.normalizeEl(target);
+    this.$current = this.normalizeEl(target);
 
-    this.group.push($target);
-    this.$current = $target;
+    this.group.push(this.$current);
 
-    $target.focus().addClass(SelectHandler.className);
+    this.$current.focus().addClass(SelectHandler.className);
 
-    return $target;
+    return this.$current;
   }
 
   /**

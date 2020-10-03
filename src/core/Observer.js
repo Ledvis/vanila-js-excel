@@ -21,7 +21,7 @@ export default class Observer {
   emit(eventName, args) {
     if (!Array.isArray(this.events[eventName])) return;
 
-    this.events[eventName].forEach((cb) => cb(...args));
+    this.events[eventName].forEach((cb) => cb(args));
   }
 
   /**

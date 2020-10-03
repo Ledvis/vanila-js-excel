@@ -11,9 +11,9 @@ export default class Base extends Listener {
    *Creates an instance of Base.
    * @param {Object} root
    * @param {Object} [options={}]
-   * @param {Object.<string, string>} options.name
-   * @param {Object.<string, Array>} options.listeners
-   * @param {Object.<string, Object>} options.observer
+   * @param {Object.<String, String>} options.name
+   * @param {Object.<String, Array>} options.listeners
+   * @param {Object.<String, Object>} options.observer
    * @memberof Base
    */
   constructor(root, options = {}) {
@@ -21,6 +21,8 @@ export default class Base extends Listener {
 
     this.componentName = options.name;
     this.observer = options.observer;
+    this.store = options.store;
+
     this.unsubscribers = [];
   }
 
@@ -31,7 +33,7 @@ export default class Base extends Listener {
    * @memberof Base
    */
   $emit(eventName, ...args) {
-    this.observer.emit(eventName, args);
+    this.observer.emit(eventName, ...args);
   }
 
   /**
@@ -44,6 +46,25 @@ export default class Base extends Listener {
     const unsubscribe = this.observer.on(eventName, cb);
 
     this.unsubscribers.push(unsubscribe);
+  }
+
+  /**
+   * @description
+   * @param {Object.<String, *>} action
+   * @memberof Base
+   */
+  $dispatch(action) {
+    this.store.dispatch(action);
+  }
+
+  /**
+   * @description
+   * @param {String} moduleName
+   * @param {Function} cb
+   * @memberof Base
+   */
+  $subscribe(moduleName, cb) {
+    this.store.subscribe(moduleName, cb);
   }
 
   /**

@@ -62,7 +62,7 @@ class Dom {
       this.el.textContent = content;
       return this;
     } else {
-      return this.el.textContent;
+      return this.el.textContent.trim();
     }
   }
 
@@ -133,13 +133,17 @@ class Dom {
 
   /**
    * @description
-   * @readonly
+   * @param {*} data
+   * @return {Object}
    * @memberof Dom
    */
-  get data() {
-    if (!this.el.dataset) throw new Error('Data attribute should be provided on html tag');
+  dataAttr(data) {
+    if (!data) return this.el.dataset;
+    if (typeof data !== 'object' && !('key' in data) && !('value' in data)) {
+      throw new Error('Invalid data-attribute parameter');
+    }
 
-    return this.el.dataset;
+    this.el.dataset[data.key] = data.value;
   }
 
   /**

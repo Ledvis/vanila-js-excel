@@ -1,4 +1,5 @@
 import Base from '@/core/Base';
+import { updateTextAction } from '@/redux/actions';
 
 const ALLOWED_KEYBOARD_KEYS = ['Enter', 'Tab'];
 
@@ -32,7 +33,12 @@ export default class Formula extends Base {
     super.mounted();
     this.$input = this.$root.find('.input');
 
-    this.$on('table:input', (text) => this.$input.text(text));
+    this.$subscribe('table', ({ table: { cellDataState, selectedCellIdState } }) => {
+      const text = cellDataState[selectedCellIdState];
+
+      this.$input.dataAttr({ key: 'selectedCellId', value: selectedCellIdState });
+      this.$input.text(text);
+    });
   }
 
   /**
@@ -49,11 +55,10 @@ export default class Formula extends Base {
 
   /**
    * @description
-   * @param {Event} event
    * @memberof Formula
    */
-  onInput(event) {
-    this.$emit('formula:input', event.target.textContent, 'test', 30);
+  onInput() {
+    this.$dispatch(updateTextAction({ id: this.$input.dataAttr().selectedCellId, value: this.$input.text() }));
   }
 
   /**

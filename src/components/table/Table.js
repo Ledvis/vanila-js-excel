@@ -3,6 +3,7 @@ import { createTable } from '@/components/table/createTable.template';
 import resizeHandler from '@/components/table/resizeHandler';
 import { SelectHandler } from '@/components/table/SelectHandler';
 import { shouldResize, shouldSelect } from '@/components/table/table.utils';
+import { resizeTableAction, updateTextAction } from '@/redux/actions';
 
 export const ALLOWED_KEYBOARD_KEYS = {
   enter: 'Enter', tab: 'Tab', up: 'ArrowUp', right: 'ArrowRight', down: 'ArrowDown', left: 'ArrowLeft',
@@ -42,7 +43,9 @@ export default class Table extends Base {
     this.selector = new SelectHandler(this.$root);
     this.selectCell(this.$root.find('[data-id="0:0"]'));
 
-    this.$on('formula:input', (text) => {
+    this.$subscribe('table', ({ table: { cellDataState, selectedCellIdState } }) => {
+      const text = cellDataState[selectedCellIdState];
+
       this.selector.$current.text(text);
     });
     this.$on('formula:enter', () => {
@@ -56,8 +59,19 @@ export default class Table extends Base {
    * @memberof Table
    */
   selectCell(target) {
-    this.$selected = this.selector.select(target);
-    this.$emit('table:input', this.$selected.text());
+    this.selector.select(target);
+    this.updateCellText();
+  }
+
+  /**
+   * @description
+   * @memberof Table
+   */
+  updateCellText() {
+    this.$dispatch(updateTextAction({
+      value: this.selector.$current.text(),
+      id: this.selector.$current.dataAttr().id,
+    }));
   }
 
   /**
@@ -65,9 +79,11 @@ export default class Table extends Base {
    * @param {Event} event
    * @memberof Table
    */
-  onMousedown({ target, shiftKey }) {
+  async onMousedown({ target, shiftKey }) {
     if (shouldResize(target)) {
-      resizeHandler(this.$root, target);
+      const data = await resizeHandler(this.$root, target);
+
+      this.$dispatch(resizeTableAction(data));
     } else if (shouldSelect(target)) {
       if (shiftKey) {
         this.selector.selectGroup(target);
@@ -94,7 +110,7 @@ export default class Table extends Base {
    * @memberof Table
    */
   onInput() {
-    this.$emit('table:input', this.selector.$current.text());
+    this.updateCellText();
   }
 
   /**
@@ -103,6 +119,11 @@ export default class Table extends Base {
    * @memberof Table
    */
   toHTML() {
-    return createTable(Table.rowsCount);
+    return createTable({
+      rowsCount: Table.rowsCount,
+      columnsWidth: this.store.getState('table').columnsWidthState,
+      rowsHeight: this.store.getState('table').rowsHeightState,
+      cellData: this.store.getState('table').cellDataState,
+    });
   }
 }
