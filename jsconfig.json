@@ -5,10 +5,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./src/*"
+        "src/*"
       ],
       "@/core/*": [
-        "./src/core/*"
+        "src/core/*"
       ],
     }
   },

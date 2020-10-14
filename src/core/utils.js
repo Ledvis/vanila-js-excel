@@ -11,3 +11,41 @@ export function capitalize(string = '') {
 
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+/**
+ * @description
+ * @export
+ * @param {String} key
+ * @param {Object.<string, *>} [data=null]
+ * @return {(Undefined | Object)}
+ */
+export function storage(key, data = null) {
+  if (!data) return JSON.parse(localStorage.getItem(key));
+
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+/**
+ * @description
+ * @export
+ * @param {*} a
+ * @param {*} b
+ * @return {Boolean}
+ */
+export function isEqual(a, b) {
+  if (typeof a === 'object' && typeof b === 'object') {
+    return JSON.stringify(a) === JSON.stringify(b);
+  } else {
+    return a === b;
+  }
+}
+
+/**
+ * @description
+ * @export
+ * @param {(Object|Array)} value
+ * @return {(Object|Array)}
+ */
+export function clone(value) {
+  return JSON.parse(JSON.stringify(value));
+}

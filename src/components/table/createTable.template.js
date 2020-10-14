@@ -3,6 +3,9 @@ const CODES = {
   Z: 90,
 };
 
+const DEFAULT_COLUMN_WIDTH = '120px';
+const DEFAULT_ROW_HEIGHT = '24px';
+
 /**
  * @description
  * @param {_} _ - placeholder
@@ -15,43 +18,64 @@ function toChar(_, index) {
 
 /**
  * @description
- * @param {String} char
+ * @param {Object} columnsWidth
  * @param {Number} index
  * @return {String}
  */
-function createColumn(char, index) {
-  return `<div class="column" data-type="resizable" data-order-number="${index}">
-            ${char}
-            <span class="resizer resizer--column" data-resizer="column" >
-              <span class="resizer__slider" />
-            </span>
-          </div>`;
+function createColumn(columnsWidth = {}) {
+  return (char, index) => (
+    `<div 
+      class="column"
+      style="width: ${columnsWidth[index] || DEFAULT_COLUMN_WIDTH}" 
+      data-type="resizable"
+      data-order-number="${index}"
+    >
+        ${char}
+        <span class="resizer resizer--column" data-resizer="column" >
+          <span class="resizer__slider" />
+        </span>
+      </div>`
+  );
 }
 
 /**
  * @description
  * @param {Number} rowNumber
+ * @param {Object} columnsWidth
  * @return {String}
  */
-function createCell(rowNumber) {
-  return (content, index) =>
-    `<div class="cell" data-type="cell-${index}" data-id="${rowNumber}:${index}" contenteditable>${content}</div>`;
+function createCell(rowNumber, { columnsWidth = {}, cellData = {} } = {}) {
+  return (_, index) =>
+    `<div class="cell" 
+      style="width: ${columnsWidth[index] || DEFAULT_COLUMN_WIDTH}" 
+      data-type="cell-${index}" 
+      data-id="${rowNumber}:${index}" 
+      contenteditable
+    >
+      ${cellData[`${rowNumber}:${index}`] || ''}
+    </div>`;
 }
 
 /**
  * @description
  * @param {String} index
  * @param {String} content
+ * @param {Object.<string, *>} rowsHeight
  * @return {String}
  */
-function createRow(index = '', content) {
+function createRow(index = '', content, rowsHeight = {}) {
   const resizer = index ?
     `<span class="resizer resizer--row" data-resizer="row" >
       <span class="resizer__slider" />
     </span >` :
     '';
 
-  return `<div class="row" data-type="resizable" >
+  return `<div 
+            class="row"
+            data-type="resizable"
+            data-order-number="${index}" 
+            style="height: ${rowsHeight[index] || DEFAULT_ROW_HEIGHT}" 
+          >
             <div class="row-info">
               ${index}
               ${resizer}
@@ -66,16 +90,16 @@ function createRow(index = '', content) {
  * @param {number} [rowsCount]
  * @return {String}
  */
-export function createTable(rowsCount) {
+export function createTable({ rowsCount, columnsWidth, rowsHeight, cellData }) {
   const columnsCount = CODES.Z - CODES.A + 1;
-  const columns = new Array(columnsCount).fill('').map(toChar).map(createColumn).join('');
+  const columns = new Array(columnsCount).fill('').map(toChar).map(createColumn(columnsWidth)).join('');
   const rows = [];
   rows.push(createRow('', columns));
 
   for (let index = 0; index < rowsCount; index++) {
-    const cells = new Array(columnsCount).fill('').map(createCell(index)).join('');
+    const cells = new Array(columnsCount).fill('').map(createCell(index, { columnsWidth, cellData })).join('');
 
-    rows.push(createRow(index + 1, cells));
+    rows.push(createRow(index + 1, cells, rowsHeight));
   }
 
   return rows.join('');

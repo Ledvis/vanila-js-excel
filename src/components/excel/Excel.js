@@ -1,5 +1,6 @@
 import { $ } from '@/core/Dom';
 import Observer from '@/core/Observer';
+import StoreDiff from '@/core/StoreDiff';
 
 /**
  * @description
@@ -24,6 +25,8 @@ export default class Excel {
      */
     this.components = options.components || [];
     this.observer = new Observer();
+    this.storeDiff = new StoreDiff(options.store);
+    this.store = options.store;
   }
 
   /**
@@ -35,6 +38,7 @@ export default class Excel {
     const $rootEl = $.create('div', 'excel');
     const options = {
       observer: this.observer,
+      store: this.store,
     };
 
     this.components = this.components.map((Component, index) => {
@@ -57,6 +61,7 @@ export default class Excel {
   render() {
     this.$el.append(this.getRoot());
 
+    this.storeDiff.subscribeForStore(this.components);
     this.mounted();
   }
 
@@ -73,6 +78,7 @@ export default class Excel {
    * @memberof Excel
    */
   destroyed() {
+    this.storeDiff.unsubscribeFromStore();
     this.components.forEach((component) => component.destroyed());
   }
 }
