@@ -24,3 +24,28 @@ export function storage(key, data = null) {
 
   localStorage.setItem(key, JSON.stringify(data));
 }
+
+/**
+ * @description
+ * @export
+ * @param {*} a
+ * @param {*} b
+ * @return {Boolean}
+ */
+export function isEqual(a, b) {
+  if (typeof a === 'object' && typeof b === 'object') {
+    return JSON.stringify(a) === JSON.stringify(b);
+  } else {
+    return a === b;
+  }
+}
+
+/**
+ * @description
+ * @export
+ * @param {(Object|Array)} value
+ * @return {(Object|Array)}
+ */
+export function clone(value) {
+  return JSON.parse(JSON.stringify(value));
+}

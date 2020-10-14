@@ -27,6 +27,7 @@ export default class Table extends Base {
     super(root, {
       listeners: ['mousedown', 'keydown', 'input'],
       name: 'Table',
+      subscribed: ['selectedCellTextState'],
       ...options,
     });
   }
@@ -43,14 +44,18 @@ export default class Table extends Base {
     this.selector = new SelectHandler(this.$root);
     this.selectCell(this.$root.find('[data-id="0:0"]'));
 
-    this.$subscribe('table', ({ table: { cellDataState, selectedCellIdState } }) => {
-      const text = cellDataState[selectedCellIdState];
-
-      this.selector.$current.text(text);
-    });
     this.$on('formula:enter', () => {
       this.selector.$current.focus();
     });
+  }
+
+  /**
+   * @description
+   * @param {*} state
+   * @memberof Formula
+   */
+  onStoreUpdate({ selectedCellTextState }) {
+    this.selector.$current.text(selectedCellTextState);
   }
 
   /**
@@ -121,9 +126,9 @@ export default class Table extends Base {
   toHTML() {
     return createTable({
       rowsCount: Table.rowsCount,
-      columnsWidth: this.store.getState('table').columnsWidthState,
-      rowsHeight: this.store.getState('table').rowsHeightState,
-      cellData: this.store.getState('table').cellDataState,
+      columnsWidth: this.store.getState('root').columnsWidthState,
+      rowsHeight: this.store.getState('root').rowsHeightState,
+      cellData: this.store.getState('root').cellDataState,
     });
   }
 }

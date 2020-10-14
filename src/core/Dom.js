@@ -133,7 +133,9 @@ class Dom {
 
   /**
    * @description
-   * @param {*} data
+   * @param {Object} data
+   * @param {String} data.key
+   * @param {String} data.value
    * @return {Object}
    * @memberof Dom
    */

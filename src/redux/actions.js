@@ -8,7 +8,7 @@ import { TABLE_CELL, TABLE_RESIZE } from './types';
  */
 export function resizeTableAction({ resizer, id, value }) {
   return {
-    moduleName: 'table',
+    moduleName: 'root',
     type: TABLE_RESIZE,
     resizer: resizer === 'row' ? 'rowsHeightState' : 'columnsWidthState',
     id,
@@ -24,7 +24,7 @@ export function resizeTableAction({ resizer, id, value }) {
  */
 export function updateTextAction({ id, value }) {
   return {
-    moduleName: 'table',
+    moduleName: 'root',
     type: TABLE_CELL,
     id,
     value,

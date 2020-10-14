@@ -1,4 +1,4 @@
-import { capitalize } from '@core/utils';
+import { capitalize } from '@/core/utils';
 
 /**
  * @description

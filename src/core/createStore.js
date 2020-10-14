@@ -1,5 +1,7 @@
 import Observer from './Observer';
+import { clone } from '@/core/utils';
 
+// TODO: refactor into Class
 /**
  * @description
  * @export
@@ -21,9 +23,7 @@ export function createStore(reducer, initialStore = {}) {
       observer.emit(action.moduleName, state);
     },
     getState(moduleName) {
-      return moduleName ? state[moduleName] : state;
+      return moduleName ? clone(state[moduleName]) : clone(state);
     },
   };
 }
-
-// TODO: refactor into Class

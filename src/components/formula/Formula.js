@@ -19,6 +19,7 @@ export default class Formula extends Base {
     super(root, {
       listeners: ['input', 'keydown'],
       name: 'Formula',
+      subscribed: ['selectedCellTextState', 'selectedCellIdState'],
       ...options,
     });
   }
@@ -32,13 +33,19 @@ export default class Formula extends Base {
   mounted() {
     super.mounted();
     this.$input = this.$root.find('.input');
+    const { selectedCellTextState } = this.store.getState('root');
 
-    this.$subscribe('table', ({ table: { cellDataState, selectedCellIdState } }) => {
-      const text = cellDataState[selectedCellIdState];
+    this.$input.text(selectedCellTextState);
+  }
 
-      this.$input.dataAttr({ key: 'selectedCellId', value: selectedCellIdState });
-      this.$input.text(text);
-    });
+  /**
+   * @description
+   * @param {*} state
+   * @memberof Formula
+   */
+  onStoreUpdate({ selectedCellTextState, selectedCellIdState }) {
+    this.$input.dataAttr({ key: 'selectedCellIdState', value: selectedCellIdState });
+    this.$input.text(selectedCellTextState);
   }
 
   /**

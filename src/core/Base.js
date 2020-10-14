@@ -22,6 +22,7 @@ export default class Base extends Listener {
     this.componentName = options.name;
     this.observer = options.observer;
     this.store = options.store;
+    this.subscribed = options.subscribed || [];
 
     this.unsubscribers = [];
   }
@@ -59,12 +60,21 @@ export default class Base extends Listener {
 
   /**
    * @description
-   * @param {String} moduleName
-   * @param {Function} cb
+   * @param {Object} state
    * @memberof Base
    */
-  $subscribe(moduleName, cb) {
-    this.store.subscribe(moduleName, cb);
+  onStoreUpdate(state) {
+    console.warn(`Provide store listener function for ${this.componentName} component`);
+  }
+
+  /**
+   * @description
+   * @param {String} key
+   * @memberof Base
+   * @return {Boolean}
+   */
+  isSubscribed(key) {
+    return this.subscribed.includes(key);
   }
 
   /**
