@@ -12,7 +12,7 @@ export default class Base extends Listener {
    * @param {Object} root
    * @param {Object} [options={}]
    * @param {Object.<String, String>} options.name
-   * @param {Object.<String, Array>} options.listeners
+   * @param {Array.<String>} options.listeners
    * @param {Object.<String, Object>} options.observer
    * @memberof Base
    */

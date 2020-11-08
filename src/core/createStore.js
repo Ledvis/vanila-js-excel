@@ -20,6 +20,8 @@ export function createStore(reducer, initialStore = {}) {
     dispatch(action) {
       state = reducer(state, action);
 
+      if (!('moduleName' in action) || !state) throw new Error(`Invalid ${action.moduleName} action with ${action.type} type`);
+
       observer.emit(action.moduleName, state);
     },
     getState(moduleName) {

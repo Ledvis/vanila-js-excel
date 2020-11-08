@@ -44,8 +44,9 @@ export default class Formula extends Base {
    * @memberof Formula
    */
   onStoreUpdate({ selectedCellTextState, selectedCellIdState }) {
+    if (this.$input.text() !== selectedCellTextState) this.$input.text(selectedCellTextState);
+
     this.$input.dataAttr({ key: 'selectedCellIdState', value: selectedCellIdState });
-    this.$input.text(selectedCellTextState);
   }
 
   /**

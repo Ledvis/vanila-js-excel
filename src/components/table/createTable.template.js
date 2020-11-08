@@ -1,3 +1,6 @@
+import { DEFAULT_TOOLBAR_STYLES } from '@/core/constants';
+import { camelCaseToSnakeCase } from '@/core/utils';
+
 const CODES = {
   A: 65,
   Z: 90,
@@ -40,16 +43,30 @@ function createColumn(columnsWidth = {}) {
 
 /**
  * @description
+ * @param {Object.<string, *>} styles
+ * @return {String}
+ */
+function parseStyles(styles) {
+  return Object.keys(styles).map((key) => {
+    return `${[camelCaseToSnakeCase(key)]}: ${styles[key]}`;
+  }).join('; ');
+}
+
+/**
+ * @description
  * @param {Number} rowNumber
  * @param {Object} columnsWidth
  * @return {String}
  */
-function createCell(rowNumber, { columnsWidth = {}, cellData = {} } = {}) {
+function createCell(rowNumber, { columnsWidth = {}, cellData = {}, customStyles = {} } = {}) {
+  const defaultStyles = parseStyles(DEFAULT_TOOLBAR_STYLES);
+
   return (_, index) =>
     `<div class="cell" 
-      style="width: ${columnsWidth[index] || DEFAULT_COLUMN_WIDTH}" 
-      data-type="cell-${index}" 
-      data-id="${rowNumber}:${index}" 
+      style="width: ${columnsWidth[index] || DEFAULT_COLUMN_WIDTH}; 
+        ${customStyles[`${rowNumber}:${index}`] ? parseStyles(customStyles[`${rowNumber}:${index}`]) : defaultStyles}"
+      data-type="cell-${index}"
+      data-id="${rowNumber}:${index}"
       contenteditable
     >
       ${cellData[`${rowNumber}:${index}`] || ''}
@@ -90,14 +107,14 @@ function createRow(index = '', content, rowsHeight = {}) {
  * @param {number} [rowsCount]
  * @return {String}
  */
-export function createTable({ rowsCount, columnsWidth, rowsHeight, cellData }) {
+export function createTable({ rowsCount, columnsWidth, rowsHeight, cellData, customStyles }) {
   const columnsCount = CODES.Z - CODES.A + 1;
   const columns = new Array(columnsCount).fill('').map(toChar).map(createColumn(columnsWidth)).join('');
   const rows = [];
   rows.push(createRow('', columns));
 
   for (let index = 0; index < rowsCount; index++) {
-    const cells = new Array(columnsCount).fill('').map(createCell(index, { columnsWidth, cellData })).join('');
+    const cells = new Array(columnsCount).fill('').map(createCell(index, { columnsWidth, cellData, customStyles })).join('');
 
     rows.push(createRow(index + 1, cells, rowsHeight));
   }

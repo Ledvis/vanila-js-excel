@@ -173,4 +173,15 @@ export class SelectHandler {
     this.group.forEach(($el) => $el.removeClass(SelectHandler.className));
     this.group.length = 0;
   }
+
+  /**
+   * @description
+   * @param {Object.<String, String>} styles
+   * @memberof SelectHandler
+   */
+  applyStyles(styles) {
+    this.group.forEach(($cell) => {
+      $cell.css(styles);
+    });
+  }
 }

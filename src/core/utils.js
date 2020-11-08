@@ -49,3 +49,13 @@ export function isEqual(a, b) {
 export function clone(value) {
   return JSON.parse(JSON.stringify(value));
 }
+
+/**
+ * @description
+ * @export
+ * @param {String} string
+ * @return {String}
+ */
+export function camelCaseToSnakeCase(string) {
+  return string.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
+}

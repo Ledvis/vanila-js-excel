@@ -17,6 +17,9 @@ store.subscribe('root', ({ root }) => {
   storage('cellData', root.cellDataState);
   storage('selectedCellId', root.selectedCellIdState);
   storage('selectedCellText', root.selectedCellTextState);
+  storage('selectedCellStyle', root.selectedCellStyleState);
+  storage('customCellStyle', root.customCellStyleState);
+  storage('title', root.titleState);
 });
 
 window.store = store;

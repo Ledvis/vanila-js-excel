@@ -62,7 +62,7 @@ class Dom {
       this.el.textContent = content;
       return this;
     } else {
-      return this.el.textContent.trim();
+      return this.el.value?.trim() || this.el.textContent?.trim();
     }
   }
 

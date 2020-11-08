@@ -3,7 +3,10 @@ import { createTable } from '@/components/table/createTable.template';
 import resizeHandler from '@/components/table/resizeHandler';
 import { SelectHandler } from '@/components/table/SelectHandler';
 import { shouldResize, shouldSelect } from '@/components/table/table.utils';
-import { resizeTableAction, updateTextAction } from '@/redux/actions';
+import { resizeTableAction, updateTextAction, updateStylesAction } from '@/redux/actions';
+import { DEFAULT_TOOLBAR_STYLES } from '@/core/constants';
+
+const styleKeys = Object.keys(DEFAULT_TOOLBAR_STYLES);
 
 export const ALLOWED_KEYBOARD_KEYS = {
   enter: 'Enter', tab: 'Tab', up: 'ArrowUp', right: 'ArrowRight', down: 'ArrowDown', left: 'ArrowLeft',
@@ -27,7 +30,7 @@ export default class Table extends Base {
     super(root, {
       listeners: ['mousedown', 'keydown', 'input'],
       name: 'Table',
-      subscribed: ['selectedCellTextState'],
+      subscribed: ['selectedCellTextState', 'selectedCellStyleState'],
       ...options,
     });
   }
@@ -54,8 +57,9 @@ export default class Table extends Base {
    * @param {*} state
    * @memberof Formula
    */
-  onStoreUpdate({ selectedCellTextState }) {
-    this.selector.$current.text(selectedCellTextState);
+  onStoreUpdate({ selectedCellTextState, selectedCellStyleState }) {
+    if (this.selector.$current.text() !== selectedCellTextState) this.selector.$current.text(selectedCellTextState);
+    if (selectedCellStyleState) this.selector.applyStyles(selectedCellStyleState);
   }
 
   /**
@@ -66,6 +70,34 @@ export default class Table extends Base {
   selectCell(target) {
     this.selector.select(target);
     this.updateCellText();
+    this.updateCellStyles();
+  }
+
+  /**
+   * @description
+   * @param {*} target
+   * @memberof Table
+   */
+  selectCellsGroup(target) {
+    this.selector.selectGroup(target);
+
+    this.$emit('table:groupSelected', this.selector.group.map(($cell) => $cell.dataAttr().id));
+  }
+
+  /**
+   * @description
+   * @memberof Table
+   */
+  updateCellStyles() {
+    const cellStyles = this.selector.$current.css();
+    const styles = styleKeys.reduce((acc, key) => {
+      acc[key] = cellStyles[key];
+
+      return acc;
+    }, {});
+
+    // TODO: do optimization
+    this.$dispatch(updateStylesAction(styles));
   }
 
   /**
@@ -73,6 +105,7 @@ export default class Table extends Base {
    * @memberof Table
    */
   updateCellText() {
+    // TODO: do optimization
     this.$dispatch(updateTextAction({
       value: this.selector.$current.text(),
       id: this.selector.$current.dataAttr().id,
@@ -91,7 +124,8 @@ export default class Table extends Base {
       this.$dispatch(resizeTableAction(data));
     } else if (shouldSelect(target)) {
       if (shiftKey) {
-        this.selector.selectGroup(target);
+        this.selectCellsGroup(target);
+
         return;
       }
 
@@ -112,9 +146,10 @@ export default class Table extends Base {
 
   /**
    * @description
+   * @param {Event} event
    * @memberof Table
    */
-  onInput() {
+  onInput(event) {
     this.updateCellText();
   }
 
@@ -129,6 +164,7 @@ export default class Table extends Base {
       columnsWidth: this.store.getState('root').columnsWidthState,
       rowsHeight: this.store.getState('root').rowsHeightState,
       cellData: this.store.getState('root').cellDataState,
+      customStyles: this.store.getState('root').customCellStyleState,
     });
   }
 }
