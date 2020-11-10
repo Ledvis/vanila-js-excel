@@ -3,7 +3,7 @@ import { DEFAULT_TOOLBAR_STYLES } from '@/core/constants';
 import { $ } from '@/core/Dom';
 import createToolbar from '@/components/toolbar/createToolbar.template';
 import { updateStylesAction, saveCustomStyles } from '@/redux/actions';
-import { isEqual } from '@/core/utils';
+import { debounce, isEqual } from '@/core/utils';
 
 /**
  * @description
@@ -31,6 +31,16 @@ export default class Toolbar extends Base {
 
   /**
    * @description
+   * @memberof Toolbar
+   */
+  created() {
+    super.created();
+
+    this.onClick = debounce(this.onClick, 300);
+  }
+
+  /**
+   * @description
    * @readonly
    * @memberof Toolbar
    */
@@ -50,7 +60,6 @@ export default class Toolbar extends Base {
     if (type) {
       const newStyles = JSON.parse(style);
 
-      // TODO: do optimization
       this.$dispatch(updateStylesAction(newStyles));
       this.$dispatch(saveCustomStyles({
         id: this.selectedCellId,

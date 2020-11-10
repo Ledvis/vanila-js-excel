@@ -20,7 +20,7 @@ export function capitalize(string = '') {
  * @return {(Undefined | Object)}
  */
 export function storage(key, data = null) {
-  if (!data) return JSON.parse(localStorage.getItem(key));
+  if (!data && data !== '') return JSON.parse(localStorage.getItem(key));
 
   localStorage.setItem(key, JSON.stringify(data));
 }
@@ -58,4 +58,25 @@ export function clone(value) {
  */
 export function camelCaseToSnakeCase(string) {
   return string.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
+}
+
+/**
+ * @description
+ * @export
+ * @param {Function} fn
+ * @param {Number} wait
+ * @return {Function}
+ */
+export function debounce(fn, wait) {
+  let timeout;
+
+  return function(...args) {
+    clearTimeout(timeout);
+
+    timeout = setTimeout(() => {
+      clearTimeout(timeout);
+      // eslint-disable-next-line no-invalid-this
+      fn.apply(this, args);
+    }, wait);
+  };
 }

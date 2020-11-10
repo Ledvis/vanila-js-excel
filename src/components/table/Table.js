@@ -5,6 +5,7 @@ import { SelectHandler } from '@/components/table/SelectHandler';
 import { shouldResize, shouldSelect } from '@/components/table/table.utils';
 import { resizeTableAction, updateTextAction, updateStylesAction } from '@/redux/actions';
 import { DEFAULT_TOOLBAR_STYLES } from '@/core/constants';
+import { isEqual } from '@/core/utils';
 
 const styleKeys = Object.keys(DEFAULT_TOOLBAR_STYLES);
 
@@ -89,15 +90,16 @@ export default class Table extends Base {
    * @memberof Table
    */
   updateCellStyles() {
+    const { selectedCellStyleState: prevStyles } = this.store.getState('root');
     const cellStyles = this.selector.$current.css();
-    const styles = styleKeys.reduce((acc, key) => {
+
+    const newStyles = styleKeys.reduce((acc, key) => {
       acc[key] = cellStyles[key];
 
       return acc;
     }, {});
 
-    // TODO: do optimization
-    this.$dispatch(updateStylesAction(styles));
+    if (!isEqual(prevStyles, newStyles)) this.$dispatch(updateStylesAction(newStyles));
   }
 
   /**
@@ -105,7 +107,6 @@ export default class Table extends Base {
    * @memberof Table
    */
   updateCellText() {
-    // TODO: do optimization
     this.$dispatch(updateTextAction({
       value: this.selector.$current.text(),
       id: this.selector.$current.dataAttr().id,

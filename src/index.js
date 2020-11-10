@@ -6,12 +6,12 @@ import Formula from '@/components/formula/Formula';
 import Table from '@/components/table/Table';
 import { createStore } from '@/core/createStore';
 import { reducer } from '@/redux/reducer';
-import { storage } from '@/core/utils';
+import { debounce, storage } from '@/core/utils';
 import initialState from '@/redux/state';
 
 const store = createStore(reducer, initialState);
 
-store.subscribe('root', ({ root }) => {
+const storeListener = debounce(({ root }) => {
   storage('columnsWidth', root.columnsWidthState);
   storage('rowsHeight', root.rowsHeightState);
   storage('cellData', root.cellDataState);
@@ -20,7 +20,9 @@ store.subscribe('root', ({ root }) => {
   storage('selectedCellStyle', root.selectedCellStyleState);
   storage('customCellStyle', root.customCellStyleState);
   storage('title', root.titleState);
-});
+}, 300);
+
+store.subscribe('root', storeListener);
 
 window.store = store;
 

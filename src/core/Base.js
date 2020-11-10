@@ -23,8 +23,17 @@ export default class Base extends Listener {
     this.observer = options.observer;
     this.store = options.store;
     this.subscribed = options.subscribed || [];
-
     this.unsubscribers = [];
+
+    this.created();
+  }
+
+  /**
+   * @description
+   * @memberof Base
+   */
+  created() {
+    console.info(`${this.constructor.name} component created`);
   }
 
   /**
