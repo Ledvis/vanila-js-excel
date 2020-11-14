@@ -1,4 +1,5 @@
 import Base from '@/core/Base';
+import { debounce } from '@/core/utils';
 import { updateTextAction } from '@/redux/actions';
 
 const ALLOWED_KEYBOARD_KEYS = ['Enter', 'Tab'];
@@ -30,12 +31,23 @@ export default class Formula extends Base {
    * @description
    * @memberof Formula
    */
+  created() {
+    super.created();
+
+    this.onInput = debounce(this.onInput, 300);
+  }
+
+  /**
+   * @description
+   * @memberof Formula
+   */
   mounted() {
     super.mounted();
     this.$input = this.$root.find('.input');
-    const { selectedCellTextState } = this.store.getState('root');
+    const { selectedCellTextState, selectedCellIdState } = this.store.getState('root');
 
     this.$input.text(selectedCellTextState);
+    this.$input.dataAttr({ key: 'selectedCellId', value: selectedCellIdState });
   }
 
   /**
@@ -45,8 +57,7 @@ export default class Formula extends Base {
    */
   onStoreUpdate({ selectedCellTextState, selectedCellIdState }) {
     if (this.$input.text() !== selectedCellTextState) this.$input.text(selectedCellTextState);
-
-    this.$input.dataAttr({ key: 'selectedCellIdState', value: selectedCellIdState });
+    if (selectedCellIdState) this.$input.dataAttr({ key: 'selectedCellId', value: selectedCellIdState });
   }
 
   /**

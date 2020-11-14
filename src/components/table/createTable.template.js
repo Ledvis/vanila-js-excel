@@ -1,5 +1,5 @@
 import { DEFAULT_TOOLBAR_STYLES } from '@/core/constants';
-import { camelCaseToSnakeCase } from '@/core/utils';
+import { camelCaseToSnakeCase, parseValue, hasFormula } from '@/core/utils';
 
 const CODES = {
   A: 65,
@@ -61,16 +61,22 @@ function parseStyles(styles) {
 function createCell(rowNumber, { columnsWidth = {}, cellData = {}, customStyles = {} } = {}) {
   const defaultStyles = parseStyles(DEFAULT_TOOLBAR_STYLES);
 
-  return (_, index) =>
-    `<div class="cell" 
+  return (_, index) => {
+    const id = `${rowNumber}:${index}`;
+    const withFormula = hasFormula(cellData?.[id], true);
+    const data = cellData[id] && withFormula ? parseValue(cellData[id]) : cellData[id];
+
+    return `<div class="cell" 
       style="width: ${columnsWidth[index] || DEFAULT_COLUMN_WIDTH}; 
-        ${customStyles[`${rowNumber}:${index}`] ? parseStyles(customStyles[`${rowNumber}:${index}`]) : defaultStyles}"
+        ${customStyles[id] ? parseStyles(customStyles[id]) : defaultStyles}"
       data-type="cell-${index}"
-      data-id="${rowNumber}:${index}"
+      data-id="${id}"
+      ${withFormula ? `data-formula=${cellData[id]}` : ''}
       contenteditable
     >
-      ${cellData[`${rowNumber}:${index}`] || ''}
+      ${data || ''}
     </div>`;
+  };
 }
 
 /**
@@ -104,7 +110,8 @@ function createRow(index = '', content, rowsHeight = {}) {
 /**
  * @description
  * @export
- * @param {number} [rowsCount]
+ * @param {Object} param
+ * @param {Number} param.rowsCount
  * @return {String}
  */
 export function createTable({ rowsCount, columnsWidth, rowsHeight, cellData, customStyles }) {

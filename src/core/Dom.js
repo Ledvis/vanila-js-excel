@@ -53,12 +53,12 @@ class Dom {
 
   /**
    * @description
-   * @param {String} content
+   * @param {String | Number} content
    * @return {(Object | String)}
    * @memberof Dom
    */
   text(content) {
-    if (typeof content === 'string') {
+    if (typeof content === 'string' || typeof content === 'number') {
       this.el.textContent = content;
       return this;
     } else {

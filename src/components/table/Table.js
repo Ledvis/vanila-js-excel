@@ -5,12 +5,13 @@ import { SelectHandler } from '@/components/table/SelectHandler';
 import { shouldResize, shouldSelect } from '@/components/table/table.utils';
 import { resizeTableAction, updateTextAction, updateStylesAction } from '@/redux/actions';
 import { DEFAULT_TOOLBAR_STYLES } from '@/core/constants';
-import { isEqual } from '@/core/utils';
+import { isEqual, parseValue, hasFormula } from '@/core/utils';
 
 const styleKeys = Object.keys(DEFAULT_TOOLBAR_STYLES);
 
+const ARROW_KEY = { up: 'ArrowUp', right: 'ArrowRight', down: 'ArrowDown', left: 'ArrowLeft' };
 export const ALLOWED_KEYBOARD_KEYS = {
-  enter: 'Enter', tab: 'Tab', up: 'ArrowUp', right: 'ArrowRight', down: 'ArrowDown', left: 'ArrowLeft',
+  enter: 'Enter', tab: 'Tab', ...ARROW_KEY,
 };
 
 /**
@@ -50,6 +51,7 @@ export default class Table extends Base {
 
     this.$on('formula:enter', () => {
       this.selector.$current.focus();
+      // if (this.isInFormulaMode) this.selector.$current.text(parseValue(this.selector.$current.text()));
     });
   }
 
@@ -59,7 +61,12 @@ export default class Table extends Base {
    * @memberof Formula
    */
   onStoreUpdate({ selectedCellTextState, selectedCellStyleState }) {
-    if (this.selector.$current.text() !== selectedCellTextState) this.selector.$current.text(selectedCellTextState);
+    if (selectedCellTextState !== this.selector.$current.text()) {
+      this.selector.$current.text(hasFormula(selectedCellTextState, true) ?
+        parseValue(selectedCellTextState) :
+        selectedCellTextState
+      );
+    }
     if (selectedCellStyleState) this.selector.applyStyles(selectedCellStyleState);
   }
 
@@ -70,8 +77,14 @@ export default class Table extends Base {
    */
   selectCell(target) {
     this.selector.select(target);
-    this.updateCellText();
-    this.updateCellStyles();
+
+    const { id, formula } = this.selector.$current.dataAttr();
+
+    this.saveTextToStore({
+      id,
+      value: formula ? formula : this.selector.$current.text(),
+    });
+    this.saveStyleToStore();
   }
 
   /**
@@ -89,7 +102,7 @@ export default class Table extends Base {
    * @description
    * @memberof Table
    */
-  updateCellStyles() {
+  saveStyleToStore() {
     const { selectedCellStyleState: prevStyles } = this.store.getState('root');
     const cellStyles = this.selector.$current.css();
 
@@ -104,13 +117,11 @@ export default class Table extends Base {
 
   /**
    * @description
+   * @param {Object.<String, String>} {id, value}
    * @memberof Table
    */
-  updateCellText() {
-    this.$dispatch(updateTextAction({
-      value: this.selector.$current.text(),
-      id: this.selector.$current.dataAttr().id,
-    }));
+  saveTextToStore({ id, value }) {
+    this.$dispatch(updateTextAction({ id, value }));
   }
 
   /**
@@ -136,22 +147,40 @@ export default class Table extends Base {
 
   /**
    * @description
-   * @param {String} { key }
+   * @param {Event} event
    * @memberof Table
    */
-  onKeydown({ key, shiftKey }) {
-    if (Object.values(ALLOWED_KEYBOARD_KEYS).includes(key) && !shiftKey) {
-      this.selectCell(this.selector.selectNext(key));
+  onKeydown(event) {
+    const hasValue = !!this.selector.$current.text();
+    const withFormula = hasFormula(this.selector.$current.text());
+
+    if (withFormula && event.key === ALLOWED_KEYBOARD_KEYS.enter) {
+      event.preventDefault();
+
+      this.selector.$current.dataAttr({
+        key: 'formula',
+        value: this.selector.$current.text(),
+      });
+      this.selector.$current.text(parseValue(this.selector.$current.text()));
+      return;
+    }
+
+    if (hasValue && Object.values(ARROW_KEY).includes(event.key)) return;
+
+    if (Object.values(ALLOWED_KEYBOARD_KEYS).includes(event.key) && !event.shiftKey) {
+      this.selectCell(this.selector.selectNext(event.key));
     }
   }
 
   /**
    * @description
-   * @param {Event} event
    * @memberof Table
    */
-  onInput(event) {
-    this.updateCellText();
+  onInput() {
+    this.saveTextToStore({
+      value: this.selector.$current.text(),
+      id: this.selector.$current.dataAttr().id,
+    });
   }
 
   /**

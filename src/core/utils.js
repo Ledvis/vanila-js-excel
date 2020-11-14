@@ -80,3 +80,32 @@ export function debounce(fn, wait) {
     }, wait);
   };
 }
+
+/**
+   * @description
+   * @param {String} [value='']
+   * @param {Boolean} [strictEquality=false]
+   * @return {Boolean}
+   */
+export function hasFormula(value = '', strictEquality = false) {
+  if (!value) return false;
+
+  const invalidFormula = /[-+/*]/;
+  const lastCharacter = value.charAt(value.length - 1);
+
+  return strictEquality ? value.startsWith('=') && !invalidFormula.test(lastCharacter) : value.startsWith('=');
+}
+
+/**
+ * @description
+ * @export
+ * @param {String} value
+ * @return {String}
+ */
+export function parseValue(value) {
+  try {
+    return eval(value.slice(1));
+  } catch (error) {
+    alert('Похоже, что в вашей формуле есть ошибка.');
+  }
+}
