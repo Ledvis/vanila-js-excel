@@ -104,6 +104,14 @@ module.exports = {
         exclude: /node_modules/,
         use: getJSLoaders(),
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
     ],
   },
 };

@@ -23,18 +23,18 @@ export default class StoreDiff {
    * @memberof StoreDiff
    */
   subscribeForStore(components) {
-    let prevState = this.store.getState('root');
+    let prevState = this.store.getState();
 
-    this.#unsubscribeFn = this.store.subscribe('root', ({ root }) => {
-      Object.keys(root).forEach(((stateKey) => {
-        if (!(isEqual(prevState[stateKey], root[stateKey]))) {
+    this.#unsubscribeFn = this.store.subscribe((state) => {
+      Object.keys(state).forEach(((stateKey) => {
+        if (!(isEqual(prevState[stateKey], state[stateKey]))) {
           components.forEach((component) => {
-            if (component.isSubscribed(stateKey)) component.onStoreUpdate({ [stateKey]: root[stateKey] });
+            if (component.isSubscribed(stateKey)) component.onStoreUpdate({ [stateKey]: state[stateKey] });
           });
         }
       }));
 
-      prevState = this.store.getState('root');
+      prevState = this.store.getState();
     });
   }
 

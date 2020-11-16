@@ -40,6 +40,10 @@
     }
   }
 
+  &__time {
+    text-decoration: underline;
+  }
+
   &__view {
     max-width: 1000px;
     margin: 0 auto;

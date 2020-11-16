@@ -5,4 +5,4 @@ export const DEFAULT_TOOLBAR_STYLES = {
   textDecoration: 'none',
 };
 
-export const DEFAULT_HEADER_TITLE = 'Моя таблица';
+export const DEFAULT_HEADER_TITLE = 'My table';

@@ -44,7 +44,7 @@ export default class Formula extends Base {
   mounted() {
     super.mounted();
     this.$input = this.$root.find('.input');
-    const { selectedCellTextState, selectedCellIdState } = this.store.getState('root');
+    const { selectedCellTextState, selectedCellIdState } = this.store.getState();
 
     this.$input.text(selectedCellTextState);
     this.$input.dataAttr({ key: 'selectedCellId', value: selectedCellIdState });

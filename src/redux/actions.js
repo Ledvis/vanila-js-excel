@@ -8,7 +8,6 @@ import { TABLE_CELL, TABLE_RESIZE, TABLE_STYLE, CUSTOM_STYLES, HEADER_TITLE } fr
  */
 export function resizeTableAction({ resizer, id, value }) {
   return {
-    moduleName: 'root',
     type: TABLE_RESIZE,
     resizer: resizer === 'row' ? 'rowsHeightState' : 'columnsWidthState',
     id,
@@ -24,7 +23,6 @@ export function resizeTableAction({ resizer, id, value }) {
  */
 export function updateTextAction({ id, value }) {
   return {
-    moduleName: 'root',
     type: TABLE_CELL,
     id,
     value,
@@ -39,7 +37,6 @@ export function updateTextAction({ id, value }) {
  */
 export function updateStylesAction(styles) {
   return {
-    moduleName: 'root',
     type: TABLE_STYLE,
     styles,
   };
@@ -53,7 +50,6 @@ export function updateStylesAction(styles) {
  */
 export function saveCustomStyles({ id, styles }) {
   return {
-    moduleName: 'root',
     type: CUSTOM_STYLES,
     id,
     styles,
@@ -67,7 +63,6 @@ export function saveCustomStyles({ id, styles }) {
  */
 export function updateTitle({ value }) {
   return {
-    moduleName: 'root',
     type: HEADER_TITLE,
     value,
   };

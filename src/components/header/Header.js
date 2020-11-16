@@ -38,7 +38,7 @@ export default class Header extends Base {
    * @memberof Header
    */
   toHTML() {
-    const title = this.store.getState('root').titleState;
+    const title = this.store.getState().titleState;
 
     return `
         <input type="text" class="input" value="${title}" />

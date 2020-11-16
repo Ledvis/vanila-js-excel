@@ -103,7 +103,7 @@ export default class Table extends Base {
    * @memberof Table
    */
   saveStyleToStore() {
-    const { selectedCellStyleState: prevStyles } = this.store.getState('root');
+    const { selectedCellStyleState: prevStyles } = this.store.getState();
     const cellStyles = this.selector.$current.css();
 
     const newStyles = styleKeys.reduce((acc, key) => {
@@ -189,12 +189,19 @@ export default class Table extends Base {
    * @memberof Table
    */
   toHTML() {
+    const {
+      columnsWidthState: columnsWidth,
+      rowsHeightState: rowsHeight,
+      cellDataState: cellData,
+      customCellStyleState: customStyles,
+    } = this.store.getState();
+
     return createTable({
       rowsCount: Table.rowsCount,
-      columnsWidth: this.store.getState('root').columnsWidthState,
-      rowsHeight: this.store.getState('root').rowsHeightState,
-      cellData: this.store.getState('root').cellDataState,
-      customStyles: this.store.getState('root').customCellStyleState,
+      columnsWidth,
+      rowsHeight,
+      cellData,
+      customStyles,
     });
   }
 }

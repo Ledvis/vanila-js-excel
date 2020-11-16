@@ -1,31 +1,48 @@
-import Observer from './Observer';
+import Observer from '@/core/Observer';
 import { clone } from '@/core/utils';
 
-// TODO: refactor into Class
+/**
+ * @description
+ * @return {Array}
+ * @export
+ */
+export function fetchStateList() {
+  const states = [];
+
+  for (let index = 0; index < localStorage.length; index++) {
+    const stateKey = localStorage.key(index);
+
+    if (stateKey.includes('spreadsheet')) states.push(JSON.parse(stateKey.split(':')[1]));
+  }
+
+  return states;
+}
+
 /**
  * @description
  * @export
  * @param {Function} reducer
- * @param {Object.<string, *>} [initialStore={}]
+ * @param {Object.<String, Object>} {id, initialState}
  * @return {Object}
  */
-export function createStore(reducer, initialStore = {}) {
-  let state = reducer(initialStore);
+export function createStore(reducer, { id, initialState } = {}) {
+  const existedState = JSON.parse(localStorage.getItem(id));
+  let state = reducer(existedState ? existedState : initialState);
   const observer = new Observer;
 
   return {
-    subscribe(moduleName, cb) {
-      return observer.on(moduleName, cb);
+    subscribe(cb) {
+      return observer.on(id, cb);
     },
     dispatch(action) {
       state = reducer(state, action);
 
-      if (!('moduleName' in action) || !state) throw new Error(`Invalid ${action.moduleName} action with ${action.type} type`);
+      if (!state) throw new Error(`Invalid action with ${action.type} type`);
 
-      observer.emit(action.moduleName, state);
+      observer.emit(id, state);
     },
-    getState(moduleName) {
-      return moduleName ? clone(state[moduleName]) : clone(state);
+    getState() {
+      return clone(state);
     },
   };
 }

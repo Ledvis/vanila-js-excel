@@ -10,16 +10,11 @@ import StoreDiff from '@/core/StoreDiff';
 export default class Excel {
   /**
    *Creates an instance of Excel.
-   * @param {string} selector - DOM selector
-   * @param {Object.<string, *>} options
-   * @param {Object.<string, Array>} options.components - composition components Class
+   * @param {Object.<String, any>} options
+   * @param {Array.<Object>} options.components
    * @memberof Excel
    */
-  constructor(selector, options) {
-    /**
-    * @property {Object}
-     */
-    this.$el = $(selector);
+  constructor(options) {
     /**
      * @property {Array}
      */
@@ -58,18 +53,8 @@ export default class Excel {
    * @description
    * @memberof Excel
    */
-  render() {
-    this.$el.append(this.getRoot());
-
-    this.storeDiff.subscribeForStore(this.components);
-    this.mounted();
-  }
-
-  /**
-   * @description
-   * @memberof Excel
-   */
   mounted() {
+    this.storeDiff.subscribeForStore(this.components);
     this.components.forEach((component) => component.mounted());
   }
 
