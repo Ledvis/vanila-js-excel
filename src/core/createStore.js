@@ -12,7 +12,15 @@ export function fetchStateList() {
   for (let index = 0; index < localStorage.length; index++) {
     const stateKey = localStorage.key(index);
 
-    if (stateKey.includes('spreadsheet')) states.push(JSON.parse(stateKey.split(':')[1]));
+    if (stateKey.includes('spreadsheet')) {
+      const created = JSON.parse(stateKey.split(':')[1]);
+      const modified = JSON.parse(localStorage.getItem(stateKey)).modifiedState;
+
+      states.push({
+        created,
+        modified,
+      });
+    }
   }
 
   return states;

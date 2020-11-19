@@ -1,13 +1,10 @@
-import { TABLE_RESIZE, TABLE_CELL, TABLE_STYLE, CUSTOM_STYLES, HEADER_TITLE } from './types';
+import { TABLE_RESIZE, TABLE_CELL, TABLE_STYLE, CUSTOM_STYLES, HEADER_TITLE, MODIFIED_TABLE } from '@/redux/types';
 import { clone } from '@/core/utils';
 
 export const reducer = (state, action = {}) => {
-  let currentResizerState;
-
   switch (action.type) {
     case TABLE_RESIZE:
-      currentResizerState = state[action.resizer];
-      state[action.resizer] = { ...clone(currentResizerState), [action.id]: action.value };
+      state[action.resizer] = { ...clone(state[action.resizer]), [action.id]: action.value };
 
       return clone(state);
     case TABLE_CELL:
@@ -39,6 +36,10 @@ export const reducer = (state, action = {}) => {
       return clone(state);
     case HEADER_TITLE:
       state.titleState = action.value;
+
+      return clone(state);
+    case MODIFIED_TABLE:
+      state.modifiedState = action.value;
 
       return clone(state);
     default:

@@ -10,4 +10,5 @@ export default {
   selectedCellStyleState: storage('selectedCellStyle') || DEFAULT_TOOLBAR_STYLES,
   customCellStyleState: storage('customCellStyle') || {},
   titleState: storage('title') || DEFAULT_HEADER_TITLE,
+  modifiedState: storage('modified') || Date.now(),
 };

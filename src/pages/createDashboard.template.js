@@ -2,18 +2,32 @@ import { CurrentRoute } from '@/router/CurrentRoute';
 
 /**
  * @description
+ * @param {Object} date
+ * @return {String}
+ */
+function fabricDate(date) {
+  return date.toLocaleString('uk-UK', {
+    year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit',
+  });
+}
+
+/**
+ * @description
  * @param {Array} states
  * @return {String}
  */
 export function createTableList(states) {
-  const list = states.map((timestamp, index) => {
-    const date = new Date(timestamp);
+  const list = states.map((dates, index) => {
+    const created = fabricDate(new Date(dates.created));
+    const modified = fabricDate(new Date(dates.modified));
 
     return `<li class="db__record">
-              <a href="#spreadsheets/${timestamp}">Table number ${index + 1}</a>
+              <a href="#spreadsheets/${dates.created}">Table number ${index + 1}</a>
+              <strong class="db__created">
+                <span class="db__date">${created}</span>
+              </strong>
               <strong>
-                <span class="db__date">${`${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`}</span>
-                <span class="db__time">${`${date.getHours()}:${date.getMinutes()}`}</span>
+                <span class="db__date">${modified}</span>
               </strong>
             </li>`;
   }).join('');
@@ -56,7 +70,8 @@ export function createDashboard(states = []) {
       <div class="db__table db__view">
         <div class="db__list-header">
           <span>Name</span>
-          <span>Created</span>
+          <span class="db__caption">Created</span>
+          <span>Modified</span>
         </div>
         ${createTableList(states)}
       </div>`;

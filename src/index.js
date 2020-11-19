@@ -5,7 +5,10 @@ import { Spreadsheets } from './pages/Spreadsheets';
 import { NotFound } from './pages/NotFound';
 
 new Router('#app', {
-  dashboard: Dashboard,
-  spreadsheets: Spreadsheets,
-  notFound: NotFound,
+  routes: {
+    dashboard: Dashboard,
+    spreadsheets: Spreadsheets,
+    notFound: NotFound,
+  },
+  defaultRoute: 'dashboard',
 });

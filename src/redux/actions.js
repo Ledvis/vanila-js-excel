@@ -1,4 +1,4 @@
-import { TABLE_CELL, TABLE_RESIZE, TABLE_STYLE, CUSTOM_STYLES, HEADER_TITLE } from '@/redux/types';
+import { TABLE_CELL, TABLE_RESIZE, TABLE_STYLE, CUSTOM_STYLES, HEADER_TITLE, MODIFIED_TABLE } from '@/redux/types';
 
 /**
  * @description
@@ -64,6 +64,19 @@ export function saveCustomStyles({ id, styles }) {
 export function updateTitle({ value }) {
   return {
     type: HEADER_TITLE,
+    value,
+  };
+}
+
+/**
+ * @description
+ * @export
+ * @param {String} date
+ * @return {Object}
+ */
+export function updateDate({ id, value }) {
+  return {
+    type: MODIFIED_TABLE,
     value,
   };
 }

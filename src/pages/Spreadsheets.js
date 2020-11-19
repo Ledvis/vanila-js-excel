@@ -9,6 +9,7 @@ import { reducer } from '@/redux/reducer';
 import { debounce, storage } from '@/core/utils';
 import initialState from '@/redux/state';
 import { CurrentRoute } from '@/router/CurrentRoute';
+import { updateDate } from '@/redux/actions';
 
 /**
  * @description
@@ -32,10 +33,14 @@ export class Spreadsheets extends Page {
     }, 300);
 
     store.subscribe(storeListener);
+    store.dispatch(updateDate({
+      id,
+      value: Date.now(),
+    }));
 
     this.child = new Excel({
       components: [Header, Toolbar, Formula, Table],
-      store,
+      store: store,
     });
   }
 

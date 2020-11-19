@@ -1,6 +1,7 @@
 import Base from '@/core/Base';
 import { $ } from '@/core/Dom';
 import { updateTitle } from '@/redux/actions';
+import { CurrentRoute } from '@/router/CurrentRoute';
 
 /**
  * @description
@@ -18,7 +19,7 @@ export default class Header extends Base {
    */
   constructor(root, options) {
     super(root, {
-      listeners: ['input'],
+      listeners: ['input', 'click'],
       ...options,
     });
   }
@@ -34,6 +35,20 @@ export default class Header extends Base {
 
   /**
    * @description
+   * @param {HTMLElement} {target}
+   * @memberof Header
+   */
+  onClick({ target }) {
+    const $el = $(target);
+    const actionType = $el.dataAttr().action;
+
+    if (!actionType) return;
+    if (actionType === 'delete') localStorage.removeItem(`spreadsheet:${CurrentRoute.param}`);
+    CurrentRoute.path = '#dashboard';
+  }
+
+  /**
+   * @description
    * @return {string}
    * @memberof Header
    */
@@ -43,10 +58,10 @@ export default class Header extends Base {
     return `
         <input type="text" class="input" value="${title}" />
         <div>
-          <div class="button">
+          <div class="button" data-action="delete">
             <i class="material-icons">delete</i>
           </div>
-          <div class="button">
+          <div class="button" data-action="exit">
             <i class="material-icons">exit_to_app</i>
           </div>
         </div>
