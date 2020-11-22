@@ -1,6 +1,6 @@
 import { $ } from '@/core/Dom';
 import Observer from '@/core/Observer';
-import StoreDiff from '@/core/StoreDiff';
+import StoreDiff from '@/core/store/StoreDiff';
 
 /**
  * @description

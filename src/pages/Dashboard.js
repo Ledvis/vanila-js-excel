@@ -1,4 +1,4 @@
-import { fetchStateList } from '@/core/createStore';
+import { fetchStateList } from '@/core/store/createStore';
 import { $ } from '@/core/Dom';
 import { Page } from '@/core/Page';
 import { createDashboard } from './createDashboard.template';
