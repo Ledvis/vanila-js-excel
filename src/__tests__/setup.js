@@ -1,8 +1,11 @@
 /* eslint-disable require-jsdoc */
-
 class LocalStorageMock {
   constructor() {
     this.store = {};
+  }
+
+  get storeKeys() {
+    return Object.keys(this.store);
   }
 
   clear() {
@@ -10,20 +13,25 @@ class LocalStorageMock {
   }
 
   getItem(key) {
-    return this.store[key] || null;
+    return JSON.stringify(this.store[key]) || null;
   }
 
   setItem(key, value) {
-    this.store[key] = value.toString();
+    this.store[key] = JSON.stringify(value);
   }
 
   removeItem(key) {
     delete this.store[key];
   }
+
+  get length() {
+    return this.storeKeys.length;
+  }
+
+  key(index) {
+    return this.storeKeys[index];
+  }
 }
 
 delete window.localStorage;
 window.localStorage = new LocalStorageMock;
-
-// delete window.localStorage;
-// window.localStorage = { getItem: jest.fn().mockReturnValue(JSON.stringify(mockStorageState)) };

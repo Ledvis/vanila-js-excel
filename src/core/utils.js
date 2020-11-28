@@ -106,6 +106,6 @@ export function parseValue(value) {
   try {
     return eval(value.slice(1));
   } catch (error) {
-    alert('Похоже, что в вашей формуле есть ошибка.');
+    alert('It looks like there is an error in your formula.');
   }
 }

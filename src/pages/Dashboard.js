@@ -1,4 +1,4 @@
-import { fetchStateList } from '@/core/store/createStore';
+import { fetchStateEntries } from '@/core/store/fetchState';
 import { $ } from '@/core/Dom';
 import { Page } from '@/core/Page';
 import { createDashboard } from './createDashboard.template';
@@ -26,7 +26,7 @@ export class Dashboard extends Page {
   getRoot() {
     const $root = $.create('div', 'db');
 
-    $root.html(createDashboard(fetchStateList()));
+    $root.html(createDashboard(fetchStateEntries()));
 
     return $root;
   }

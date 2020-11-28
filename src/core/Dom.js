@@ -237,7 +237,7 @@ class Dom {
 /**
  * @description
  * @export
- * @param {*} selector
+ * @param {(string | HTMLElement)} selector
  * @return {HTMLElement}
  */
 export function $(selector) {
