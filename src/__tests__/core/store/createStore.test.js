@@ -1,5 +1,6 @@
 import { createStore } from '@/core/store/createStore';
-import { TABLE_CELL } from '../../../redux/types';
+import { reducer } from '@/redux/reducer';
+import { TABLE_CELL } from '@/redux/types';
 
 const mockEmit = jest.fn();
 const mockOn = jest.fn();
@@ -14,7 +15,10 @@ jest.mock('@/core/Observer.js', () => {
 });
 
 describe('createStore', () => {
-  let store;
+  beforeEach(() => {
+    localStorage.store = {};
+  });
+
   const mockInitialState = {
     id: 'spreadsheet:1605638074751',
     initialState: {
@@ -29,60 +33,66 @@ describe('createStore', () => {
       modifiedState: 'spreadsheet:1605638074751',
     },
   };
-  const mockReducer = (state) => jest.fn().mockReturnValue(state);
-
-  beforeAll(() => {
-    store = createStore(mockReducer(mockInitialState.initialState), mockInitialState);
-  });
 
   it('should initialize store object with methods', () => {
+    const store = createStore(reducer, mockInitialState);
+
     expect(store).toBeDefined();
     expect(store.subscribe).toBeDefined();
     expect(store.dispatch).toBeDefined();
     expect(store.getState).toBeDefined();
   });
 
-  it('should return state object equal to initial state IF no state exists already', () => {
+  it('should return state object IF store is empty', () => {
+    const store = createStore(reducer, mockInitialState);
+
     expect(store.getState()).toEqual(mockInitialState.initialState);
   });
 
-  it('should return state object equal to state from localStorage IF state already exists', () => {
-    const mockStorageState = { ...mockInitialState.initialState, selectedCellIdState: '3:3' };
+  it('should return state object IF store has state', () => {
+    const mockLocalStore = {
+      'spreadsheet:1605638074751': {
+        "columnsWidthState": {},
+        "rowsHeightState": {},
+        "cellDataState": {
+            "0:0": ""
+        },
+        "modifiedState": 1605813572822
+      }
+    }
 
-    store = createStore(mockReducer(mockStorageState), mockInitialState);
+    localStorage.store = mockLocalStore;
+    const store = createStore(reducer, mockInitialState);
 
-    expect(store.getState()).toEqual(mockStorageState);
+    expect(store.getState()).toEqual(mockLocalStore['spreadsheet:1605638074751']);
   });
 
   it('should emit updated state', () => {
-    const mockStorageState = { ...mockInitialState.initialState, selectedCellIdState: '1:1' };
     const mockValidAction = {
       type: TABLE_CELL,
       id: 'some id',
       value: 'some value',
     };
+    const mockStorageState = {
+      ...mockInitialState.initialState,
+      ...{
+        cellDataState: {
+          [mockValidAction.id]: mockValidAction.value
+        },
+        selectedCellTextState: mockValidAction.value,
+        selectedCellIdState: mockValidAction.id,
+      }
+    };
 
-    store = createStore(mockReducer(mockStorageState), mockInitialState);
+    const store = createStore(reducer, mockInitialState);
     store.dispatch(mockValidAction);
 
     expect(mockEmit).toHaveBeenCalledWith(mockInitialState.id, mockStorageState);
-  });
-
-  it('should throw error if NO state provided', () => {
-    const mockValidAction = {
-      type: 'invalid type',
-      id: 'some id',
-      value: 'some value',
-    };
-
-    store = createStore(mockReducer(null), mockInitialState);
-
-    expect(() => {
-      store.dispatch(mockValidAction);
-    }).toThrow(`Invalid action with ${mockValidAction.type} type`);
+    expect(store.getState()).toEqual(mockStorageState)
   });
 
   it('should subscribe for event', () => {
+    const store = createStore(reducer, mockInitialState);
     const mockCb = () => ({});
 
     store.subscribe(mockCb);

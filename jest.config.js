@@ -9,7 +9,7 @@ module.exports = {
     '^.+\\.js$': 'babel-jest',
   },
   moduleNameMapper: {
-    '^src/(.*)$': '<rootDir>/src/$1',
+    '^@/(.*)$': '<rootDir>/src/$1',
     '^@/core(.*)$': '<rootDir>/src/core/$1',
   },
   coverageDirectory: './coverage/',
