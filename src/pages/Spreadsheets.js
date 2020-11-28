@@ -6,7 +6,6 @@ import Formula from '@/components/formula/Formula';
 import Table from '@/components/table/Table';
 import { createStore } from '@/core/store/createStore';
 import { reducer } from '@/redux/reducer';
-import { debounce, storage } from '@/core/utils';
 import initialState from '@/redux/state';
 import { CurrentRoute } from '@/router/CurrentRoute';
 import { updateDate } from '@/redux/actions';
@@ -28,11 +27,6 @@ export class Spreadsheets extends Page {
     const id = 'spreadsheet:' + CurrentRoute.param;
     const store = createStore(reducer, { id, initialState });
 
-    const storeListener = debounce((state) => {
-      storage(id, state);
-    }, 300);
-
-    store.subscribe(storeListener);
     store.dispatch(updateDate({
       id,
       value: Date.now(),

@@ -33,7 +33,6 @@ export default class Base extends Listener {
    * @memberof Base
    */
   created() {
-    console.info(`${this.constructor.name} component created`);
   }
 
   /**

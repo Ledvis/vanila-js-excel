@@ -36,7 +36,7 @@ export default class Excel {
       store: this.store,
     };
 
-    this.components = this.components.map((Component, index) => {
+    this.components = this.components.map((Component) => {
       const $childEl = $.create('div', Component.className);
       const childComponent = new Component($childEl, options);
 

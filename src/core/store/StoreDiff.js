@@ -1,4 +1,4 @@
-import { isEqual } from '@/core/utils';
+import { isEqual, debounce, storage } from '@/core/utils';
 
 /**
  * @description
@@ -25,7 +25,7 @@ export default class StoreDiff {
   subscribeForStore(components) {
     let prevState = this.store.getState();
 
-    this.#unsubscribeFn = this.store.subscribe((state) => {
+    const storeListener = debounce((state) => {
       Object.keys(state).forEach(((stateKey) => {
         if (!(isEqual(prevState[stateKey], state[stateKey]))) {
           components.forEach((component) => {
@@ -34,8 +34,12 @@ export default class StoreDiff {
         }
       }));
 
+      storage(this.store._id, state);
+
       prevState = this.store.getState();
-    });
+    }, 300);
+
+    this.#unsubscribeFn = this.store.subscribe(storeListener);
   }
 
   /**
