@@ -22,6 +22,7 @@ export default class Excel {
     this.observer = new Observer();
     this.storeDiff = new StoreDiff(options.store);
     this.store = options.store;
+    this.processor = options.processor;
   }
 
   /**
@@ -34,6 +35,7 @@ export default class Excel {
     const options = {
       observer: this.observer,
       store: this.store,
+      processor: this.processor,
     };
 
     this.components = this.components.map((Component) => {

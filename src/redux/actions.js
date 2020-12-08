@@ -74,7 +74,7 @@ export function updateTitle({ value }) {
  * @param {String} date
  * @return {Object}
  */
-export function updateDate({ id, value }) {
+export function updateDate({ value }) {
   return {
     type: MODIFIED_TABLE,
     value,

@@ -4,10 +4,6 @@ import Header from '@/components/header/Header';
 import Toolbar from '@/components/toolbar/Toolbar';
 import Formula from '@/components/formula/Formula';
 import Table from '@/components/table/Table';
-import { createStore } from '@/core/store/createStore';
-import { reducer } from '@/redux/reducer';
-import initialState from '@/redux/state';
-import { CurrentRoute } from '@/router/CurrentRoute';
 import { updateDate } from '@/redux/actions';
 
 /**
@@ -24,17 +20,14 @@ export class Spreadsheets extends Page {
   constructor() {
     super();
 
-    const id = 'spreadsheet:' + CurrentRoute.param;
-    const store = createStore(reducer, { id, initialState });
-
-    store.dispatch(updateDate({
-      id,
+    this.store.dispatch(updateDate({
       value: Date.now(),
     }));
 
     this.child = new Excel({
       components: [Header, Toolbar, Formula, Table],
-      store: store,
+      store: this.store,
+      processor: this.processor,
     });
   }
 

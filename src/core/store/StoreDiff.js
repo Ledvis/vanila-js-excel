@@ -1,4 +1,4 @@
-import { isEqual, debounce, storage } from '@/core/utils';
+import { isEqual, debounce } from '@/core/utils';
 
 /**
  * @description
@@ -33,8 +33,6 @@ export default class StoreDiff {
           });
         }
       }));
-
-      storage(this.store._id, state);
 
       prevState = this.store.getState();
     }, 300);

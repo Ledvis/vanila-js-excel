@@ -25,8 +25,5 @@ export function createStore(reducer, { id, initialState } = {}) {
     getState() {
       return clone(state);
     },
-    get _id() {
-      return id;
-    },
   };
 }

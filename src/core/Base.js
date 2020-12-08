@@ -22,6 +22,7 @@ export default class Base extends Listener {
     this.componentName = options.name;
     this.observer = options.observer;
     this.store = options.store;
+    this.processor = options.processor;
     this.subscribed = options.subscribed || [];
     this.unsubscribers = [];
 

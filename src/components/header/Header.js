@@ -2,6 +2,7 @@ import Base from '@/core/Base';
 import { $ } from '@/core/Dom';
 import { updateTitle } from '@/redux/actions';
 import { CurrentRoute } from '@/router/CurrentRoute';
+import { LOCAL_ACTION } from '@/core/constants';
 
 /**
  * @description
@@ -43,7 +44,8 @@ export default class Header extends Base {
     const actionType = $el.dataAttr().action;
 
     if (!actionType) return;
-    if (actionType === 'delete') localStorage.removeItem(`spreadsheet:${CurrentRoute.param}`);
+
+    if (actionType === 'delete') this.processor.delete(LOCAL_ACTION.spreadsheet, CurrentRoute.param);
     CurrentRoute.path = '#dashboard';
   }
 

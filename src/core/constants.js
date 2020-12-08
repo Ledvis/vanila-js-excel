@@ -6,3 +6,7 @@ export const DEFAULT_TOOLBAR_STYLES = {
 };
 
 export const DEFAULT_HEADER_TITLE = 'My table';
+
+export const LOCAL_ACTION = {
+  spreadsheet: 'spreadsheet',
+};

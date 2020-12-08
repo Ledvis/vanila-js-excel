@@ -17,17 +17,17 @@ function fabricDate(date) {
  * @return {String}
  */
 export function createTableList(states) {
-  const list = states.map((dates, index) => {
-    const created = fabricDate(new Date(dates.created));
-    const modified = fabricDate(new Date(dates.modified));
+  const list = states.map(({ title, created, modified }) => {
+    const _created = fabricDate(new Date(created));
+    const _modified = fabricDate(new Date(modified));
 
     return `<li class="db__record">
-              <a href="#spreadsheets/${dates.created}">Table number ${index + 1}</a>
+              <a href="#spreadsheets/${created}">${title}</a>
               <strong class="db__created">
-                <span class="db__date">${created}</span>
+                <span class="db__date">${_created}</span>
               </strong>
               <strong>
-                <span class="db__date">${modified}</span>
+                <span class="db__date">${_modified}</span>
               </strong>
             </li>`;
   }).join('');

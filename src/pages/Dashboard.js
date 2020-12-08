@@ -1,7 +1,7 @@
-import { fetchStateEntries } from '@/core/store/fetchState';
 import { $ } from '@/core/Dom';
 import { Page } from '@/core/Page';
-import { createDashboard } from './createDashboard.template';
+import { createDashboard } from '@/pages/createDashboard.template';
+import { LOCAL_ACTION } from '@/core/constants';
 
 /**
  * @description
@@ -23,10 +23,11 @@ export class Dashboard extends Page {
    * @return {Object}
    * @memberof Dashboard
    */
-  getRoot() {
+  async getRoot() {
     const $root = $.create('div', 'db');
+    const data = await this.processor.get(LOCAL_ACTION.spreadsheet);
 
-    $root.html(createDashboard(fetchStateEntries()));
+    $root.html(createDashboard(data));
 
     return $root;
   }

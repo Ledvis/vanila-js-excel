@@ -1,0 +1,1772 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"the",
+				"then"
+			],
+			[
+				"rej",
+				"reject"
+			],
+			[
+				"setti",
+				"setTimeout"
+			],
+			[
+				"re",
+				"resolve"
+			],
+			[
+				"crea",
+				"created"
+			],
+			[
+				"de",
+				"delete"
+			],
+			[
+				"dele",
+				"deleteLocaly"
+			],
+			[
+				"pr",
+				"processor"
+			],
+			[
+				"cons",
+				"const"
+			],
+			[
+				"ex",
+				"exists"
+			],
+			[
+				"trho",
+				"throw"
+			],
+			[
+				"spread",
+				"spreadsheets"
+			],
+			[
+				"cre",
+				"createDashboard"
+			],
+			[
+				"Cur",
+				"CurrentRoute"
+			],
+			[
+				"st",
+				"store"
+			],
+			[
+				"sto",
+				"store"
+			],
+			[
+				"impo",
+				"importScripts"
+			],
+			[
+				"Loc",
+				"LocalClient"
+			],
+			[
+				"deb",
+				"debounce"
+			],
+			[
+				"store",
+				"storeListener"
+			],
+			[
+				"get",
+				"getState"
+			],
+			[
+				"loca",
+				"localStorage"
+			],
+			[
+				"mock",
+				"mockStore"
+			],
+			[
+				"ge",
+				"getState"
+			],
+			[
+				"red",
+				"reducer"
+			],
+			[
+				"mockc",
+				"mockCb2"
+			],
+			[
+				"thb",
+				"thbc"
+			],
+			[
+				"exp",
+				"expect"
+			],
+			[
+				"tba",
+				"tbaoo"
+			],
+			[
+				"state",
+				"stateKey"
+			],
+			[
+				"setI",
+				"setItem"
+			],
+			[
+				"fetch",
+				"fetchState"
+			],
+			[
+				"sa",
+				"saveCustomStyles"
+			],
+			[
+				"mo",
+				"modified"
+			],
+			[
+				"thi",
+				"thi8601"
+			],
+			[
+				"sub",
+				"subscribe\t(createStore.js)"
+			],
+			[
+				"sty",
+				"styleKeys\tabc"
+			],
+			[
+				"af",
+				"appendFile\tnode_modules/fs"
+			],
+			[
+				"moc",
+				"mockReducer\tabc"
+			],
+			[
+				"ini",
+				"initialState"
+			],
+			[
+				"tb",
+				"tbst\ttoBeShorterThan"
+			],
+			[
+				"to",
+				"toBeEqual\tabc"
+			],
+			[
+				"TA",
+				"TABLE_CELL\t(actions.js)"
+			],
+			[
+				"TAB",
+				"TABLE_STYLE\t(actions.js)"
+			],
+			[
+				"tbo",
+				"tbon\ttoBeOddNumber"
+			],
+			[
+				"font",
+				"font.size\tabc"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/router/Router.js",
+			"redo_stack":
+			[
+				[
+					21,
+					1,
+					"insert",
+					{
+						"characters": "\n\n"
+					},
+					"BQAAAA0CAAAAAAAAEQIAAAAAAAAAAAAAEgIAAAAAAAASAgAAAAAAAAQAAAAgICAgEQIAAAAAAAARAgAAAAAAAAEAAAAKDQIAAAAAAAANAgAAAAAAAAQAAAAgICAgDAIAAAAAAAAMAgAAAAAAAAEAAAAK",
+					"AQAAAAAAAAABAAAAEgIAAAAAAAASAgAAAAAAAAAAAAAAAPC/"
+				]
+			],
+			"settings":
+			{
+				"buffer_size": 1198,
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+			]
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pre",
+				"Preferences: Settings"
+			],
+			[
+				"snippet: p",
+				"Snippet: prompt"
+			],
+			[
+				"lsp re",
+				"LSP: Rename"
+			],
+			[
+				"lis",
+				"Package Control: List Packages"
+			],
+			[
+				"impo",
+				"Import Helper: Insert import"
+			],
+			[
+				"RENAM",
+				"LSP: Rename"
+			],
+			[
+				"rename",
+				"LSP: Rename"
+			],
+			[
+				"ren",
+				"Rename File"
+			],
+			[
+				"packagesync: ",
+				"PackageSync: Sync Online - Push Settings to Online Sync Folder"
+			],
+			[
+				"packsync",
+				"PackageSync: Sync Online - Define Online Sync Folder"
+			],
+			[
+				"doc",
+				"DoxyDoxygen: Comment All"
+			],
+			[
+				"javasc",
+				"JavaScriptTemplateLiteralEnhancements: Convert into template literal"
+			],
+			[
+				"copy path",
+				"File: Copy Path Absolute To Project"
+			],
+			[
+				"cop",
+				"File: Copy Name"
+			],
+			[
+				"import",
+				"Import Helper: Insert import"
+			],
+			[
+				"renma",
+				"LSP: Rename"
+			],
+			[
+				"import ",
+				"Import Helper: Insert import"
+			],
+			[
+				"import helper",
+				"Import Helper: Update source modules"
+			],
+			[
+				"im",
+				"Import Helper: List imports"
+			],
+			[
+				"mer",
+				"Sublime Merge: Open Repository"
+			],
+			[
+				"pref",
+				"Preferences: Settings"
+			],
+			[
+				"upda",
+				"Sync Settings: Upload"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"packge cont",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"upd",
+				"Sync Settings: Upload"
+			],
+			[
+				"sync",
+				"Sync Settings: Upload"
+			],
+			[
+				"dele",
+				"File: Delete"
+			],
+			[
+				"new file",
+				"File: New File Relative to Current View"
+			],
+			[
+				"file",
+				"File: Delete"
+			],
+			[
+				"delte",
+				"File: Delete"
+			],
+			[
+				"syn",
+				"Sync Settings: Upload"
+			],
+			[
+				"ke",
+				"Preferences: Key Bindings"
+			],
+			[
+				"de",
+				"File: Delete"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"re",
+				"Rename File"
+			],
+			[
+				"file manager: path",
+				"File Manager: Copy Relative Path"
+			],
+			[
+				"file manager",
+				"File Manager: Copy Absolute Path"
+			],
+			[
+				"di",
+				"Package Control: Disable Package"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"p",
+				"Package Control: List Packages"
+			],
+			[
+				"",
+				"BracketHighlighter: Documentation"
+			],
+			[
+				"pa",
+				"Package Control: List Packages"
+			],
+			[
+				"uplo",
+				"Sync Settings: Upload"
+			],
+			[
+				"up",
+				"Sync Settings: Upload"
+			],
+			[
+				"lsp-v pr",
+				"Preferences: LSP-vue Settings"
+			],
+			[
+				"lsp pr",
+				"Preferences: LSP Settings"
+			],
+			[
+				"package cont sa",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"plugin",
+				"Plugin Development: Profile Events"
+			],
+			[
+				"doxydo sett",
+				"Preferences: DoxyDoxygen Settings"
+			],
+			[
+				"comment",
+				"DoxyDoxygen: Comment Wrap"
+			],
+			[
+				"doxydox",
+				"DoxyDoxygen: Comment All"
+			],
+			[
+				"lsp pre",
+				"Preferences: LSP Settings"
+			],
+			[
+				"wa",
+				"Wallaby.js: Start"
+			],
+			[
+				"cons",
+				"Console Wrap: Create logs"
+			],
+			[
+				"wall fo",
+				"Wallaby.js: Focus Tests View"
+			],
+			[
+				"cop file",
+				"File: Copy Name"
+			],
+			[
+				"conso",
+				"Console Wrap: Create logs"
+			],
+			[
+				"close all",
+				"Terminus: Close All"
+			],
+			[
+				"git gutter pre",
+				"Preferences: GitGutter Settings"
+			],
+			[
+				"gitgutter set",
+				"Preferences: GitGutter Settings"
+			],
+			[
+				"del",
+				"File: Delete"
+			],
+			[
+				"synta ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"waa",
+				"Wallaby.js: Start"
+			],
+			[
+				"merge",
+				"Sublime Merge: Open Repository"
+			],
+			[
+				"upda sett",
+				"Sync Settings: Upload"
+			],
+			[
+				"git gut",
+				"GitGutter: Support Info"
+			],
+			[
+				"npm run",
+				"npm: Run Script"
+			],
+			[
+				"wallaby",
+				"Wallaby.js: Show Uncovered Regions"
+			],
+			[
+				"ca",
+				"Carbon: Share Selection"
+			],
+			[
+				"carbon",
+				"Carbon: Share Selection"
+			],
+			[
+				"syntax xm",
+				"Set Syntax: XML"
+			],
+			[
+				"sftp",
+				"Set Syntax: SFTP Output Panel"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"wallaby: ",
+				"Wallaby.js: Toggle Current Session Run Mode (Any Change/On Save)"
+			],
+			[
+				"start",
+				"Wallaby.js: Start"
+			],
+			[
+				"ui",
+				"UI: Select Theme"
+			],
+			[
+				"wallbay show ",
+				"Wallaby.js: Show Uncovered Regions"
+			],
+			[
+				"pack upgrade",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"mov",
+				"File: Move"
+			],
+			[
+				"wall",
+				"Wallaby.js: Start"
+			],
+			[
+				"move fi",
+				"File: Move"
+			],
+			[
+				"wallaby.js ",
+				"Wallaby.js: Run File Tests"
+			],
+			[
+				"walalby:",
+				"Wallaby.js: Copy Diagnostics Report"
+			],
+			[
+				"ru",
+				"npm: Run Tests"
+			],
+			[
+				"prety json",
+				"Preferences: Pretty JSON Settings"
+			],
+			[
+				"pretty json: ",
+				"Pretty JSON: Minify JSON"
+			],
+			[
+				"pretty json",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"pretty",
+				"Pretty JSON: Minify JSON"
+			],
+			[
+				"pretty ",
+				"Pretty JSON: Minify JSON"
+			],
+			[
+				"synta json",
+				"Set Syntax: JSON"
+			],
+			[
+				"pack ins",
+				"Package Control: Install Package"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings"
+			],
+			[
+				"syn json",
+				"Set Syntax: JSON"
+			],
+			[
+				"waka",
+				"WakaTime: Open Dashboard"
+			],
+			[
+				"ope",
+				"Project Manager: Open Project"
+			],
+			[
+				"pack cont dee",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"packaview",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"doxy",
+				"DoxyDoxygen: Tutorial"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"packlis",
+				"Package Control: List Packages"
+			],
+			[
+				"wal",
+				"Wallaby.js: Start"
+			],
+			[
+				"synta",
+				"Set Syntax: JSON"
+			],
+			[
+				"run",
+				"npm: Run Tests"
+			],
+			[
+				"package view",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"pr",
+				"Preferences: Settings"
+			],
+			[
+				"sync se",
+				"Sync Settings: Edit User Settings"
+			],
+			[
+				"keyb",
+				"Preferences: Key Bindings"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"packcont s",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"lsp: ",
+				"LSP: Toggle Log Panel"
+			],
+			[
+				"en",
+				"Package Control: Enable Package"
+			],
+			[
+				"plug",
+				"Plugin Development: Profile Events"
+			],
+			[
+				"rmeo",
+				"Emmet: Remove Tag"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"docblock",
+				"DocBlockr: Reparse comment block"
+			],
+			[
+				"terminus open",
+				"Terminus: Open Default Shell in Panel"
+			],
+			[
+				"terminus",
+				"Terminus: List Shells"
+			],
+			[
+				"terminus pref",
+				"Preferences: Terminus Settings"
+			],
+			[
+				"terminus view",
+				"Terminus: Open Default Shell in Tab (View)"
+			],
+			[
+				"terminus lis",
+				"Terminus: List Shells"
+			],
+			[
+				"prefe",
+				"Preferences: Settings"
+			],
+			[
+				"sub",
+				"Snippet: not-toBeUndefined"
+			],
+			[
+				"terminus theme",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"pro",
+				"Project Manager"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 595.0,
+		"history":
+		[
+			"source.php",
+			"view.settings().get(\"syntax\")",
+			"terminus upstream:list",
+			"expand_selection",
+			"wall",
+			"git status"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/zenbook/Documents/projects/tutorials/excel-course",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/pages",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/router"
+	],
+	"file_history":
+	[
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/pages/Dashboard.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/core/clients/LocalClient.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/core/StateProcessor.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/core/Page.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/router/Router.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/pages/createDashboard.template.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/core/utils.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/core/Observer.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/core/store/createStore.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/components/header/Header.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/core/Base.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/components/excel/Excel.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/core/constants.js",
+		"/home/zenbook/.config/sublime-merge/Packages/User/Preferences.sublime-settings",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/core/store/StoreDiff.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/pages/Spreadsheets.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/components/table/SelectHandler.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/redux/reducer.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/redux/actions.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/router/CurrentRoute.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/core/Listener.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/components/table/Table.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/excel.sublime-project",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/redux/state.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/.eslintrc",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/webpack.config.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/index.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/pages/test.js",
+		"/home/zenbook/.config/sublime-text/Packages/User/Side Bar.sublime-settings",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/tsconfig.json",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/jest.config.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/.vscode/launch.json",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/.vscode/settings.json",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/test.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/__tests__/core/store/createStore.test.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/__tests__/setup.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/__tests__/core/store/fetchState.test.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/core/store/fetchState.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/package-lock.json",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/redux/types.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/__tests__/core/Observer.test.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/__tests__/core/store/createStore1.test.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/core/store/createStore1.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/wallaby.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/components/formula/Formula.js",
+		"/home/zenbook/.config/sublime-text/Packages/Wallaby/projects/4d0574d5f8c65cfe/instrumented/screen.png",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/components/toolbar/Toolbar.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/scss/_variables.scss",
+		"/home/zenbook/.config/sublime-text/Packages/User/sftp_servers/jumingo-dev",
+		"/tmp/sublime-sftp-browse-1606547728/jumingo-dev/var/www/app/.env.dev",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/__tests__/core/sftp-config.json",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/core/Dom.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/__tests__/core/Dom.test.js",
+		"/home/zenbook/.config/sublime-text/Packages/Wallaby/Wallaby.sublime-settings",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/__tests__/core/observer.test.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/__tests__/core/untitled.json",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/index.html",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/core/store/fetchStateList.js",
+		"/home/zenbook/.config/sublime-text/Packages/Theme - Default/adaptive/Adaptive.sublime-theme",
+		"/home/zenbook/.config/sublime-text/Packages/Theme - Default/Default.sublime-theme",
+		"/home/zenbook/.config/sublime-text/Package Storage/LSP-typescript/12.19.0/typescript-language-server/node_modules/typescript/lib/lib.dom.d.ts",
+		"/home/zenbook/.config/sublime-text/Packages/User/SyncSettings.sublime-settings",
+		"/home/zenbook/.profile",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/coverage/lcov-report/base.css",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/components/table/createTable.template.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/scss/index.scss",
+		"/home/zenbook/.config/sublime-text-3/Packages/User/Refactor.sublime-settings",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/package.json",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/scss/table.scss",
+		"/home/zenbook/.config/sublime-text-3/Packages/sublime-text-refactor/Refactor.sublime-settings",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/scss/dashboard.scss",
+		"/home/zenbook/.config/sublime-text-3/Packages/Theme - Default/Default.sublime-theme",
+		"/home/zenbook/.config/sublime-text-3/Packages/Theme - Soda/Soda Light 3.sublime-theme",
+		"/home/zenbook/.config/sublime-text-3/Packages/Theme - Elementary/Elementary Light 3.sublime-theme",
+		"/home/zenbook/.config/sublime-text-3/Packages/User/ESLint.sublime-settings",
+		"/home/zenbook/.config/sublime-text-3/Packages/ESLint/ESLint.sublime-settings",
+		"/home/zenbook/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/home/zenbook/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/Default (Linux).sublime-keymap",
+		"/home/zenbook/.config/sublime-text-3/Packages/User/SublimeOnSaveBuild.sublime-settings",
+		"/home/zenbook/.config/sublime-text-3/Packages/SublimeOnSaveBuild/SublimeOnSaveBuild.sublime-settings",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/core/createStore.js",
+		"/home/zenbook/.config/sublime-text-3/Packages/User/SyncSettings.sublime-settings",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/babel.config.js",
+		"/home/zenbook/Documents/projects/tutorials/excel-course/src/core/StoreDiff.js",
+		"/home/zenbook/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/zenbook/.config/sublime-text-3/Packages/Theme - Soda/Soda Dark 3.sublime-theme",
+		"/home/zenbook/Documents/projects/job/front/src/pages/Blog/test.js",
+		"/home/zenbook/Documents/projects/job/front/src/pages/Blog/Blog.vue"
+	],
+	"find":
+	{
+		"height": 56.0
+	},
+	"find_in_files":
+	{
+		"height": 149.0,
+		"where_history":
+		[
+			"<project>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"_created",
+			"_title",
+			"created",
+			"state.",
+			"resource",
+			"LOCAL_RECOURSE",
+			"#",
+			"store",
+			"LOCAL_RECOURSE",
+			"spreadsheet",
+			"spreadsheet:",
+			"spreadsheet",
+			"switch",
+			"swtich",
+			"get",
+			"save",
+			"MODIFIED_TABLE",
+			"_id",
+			"selectedCellTextState",
+			"This",
+			"this",
+			"param",
+			"storage",
+			"destroyed",
+			",\n",
+			"ignore",
+			"eslintIgnore",
+			"eslint",
+			"shared",
+			"moduleNameMapper",
+			"reducer",
+			"formula:enter",
+			"events",
+			"mockOn",
+			"mockImplement",
+			"mockCb1",
+			"on",
+			"Dom",
+			"expect",
+			"test(",
+			"test",
+			"fetchStateList",
+			"fetchState",
+			"fetchStateList",
+			"'",
+			"1605638074751",
+			"localStorage",
+			"fetchStateList",
+			"command",
+			"command_palette",
+			"tab_labe",
+			"font.size",
+			"fetchStateList",
+			"debounce",
+			"@babel",
+			"mockValidAction",
+			"('should emit updated state', () => {\n    const mockStorageState = { ...mockInitialState.initialState, selectedCellIdState: '1:1' };\n    const mockValidAction = {\n      type: TABLE_CELL,\n      id: 'some id',\n      value: 'some value',\n    };\n\n    store = createStore(mockReducer(mockStorageState), mockInitialState);\n    store.dispatch(mockValidAction);\n\n    expect(mockEmit).toHaveBeenCalledWith(mockInitialState.id, mockStorageState);\n  })",
+			"mockReducer",
+			".",
+			"createStore",
+			"subscribe",
+			"return",
+			"mockValid",
+			"mockAction",
+			"it('should modify state with action data', () => {\n    const mockStorageState = { ...mockInitialState.initialState, selectedCellIdState: '1:1' };\n    const mockData = {\n      id: '3:1',\n      value: 'cell text',\n    };\n    const mockAction = {\n      type: TABLE_CELL,\n      id: mockData.id,\n      value: mockData.value,\n    };\n\n    store = createStore(mockReducer(mockStorageState), mockInitialState);\n    store.dispatch(mockAction);\n\n    expect(mockEmit).toHaveBeenCalled();\n  });",
+			"mockPlaySoundFile",
+			"resizer",
+			"font.size",
+			"sidebar_heading",
+			"font.size",
+			"tab_label",
+			"tabset_control",
+			"sidebar_label",
+			"font.size",
+			"label_control",
+			"font.size",
+			"tab_label",
+			"label_",
+			"hashchange",
+			"_createNewSpreadsheet"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"LOCAL_ACTION",
+			"219",
+			"fetchStateEntries",
+			"{\n",
+			"mockAction"
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/router/Router.js",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1198,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								887,
+								887
+							]
+						],
+						"settings":
+						{
+							"at_wb_tests_view": false,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".\"'/@<",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "LSP-typescript"
+								}
+							],
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1194,
+										1195
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										751,
+										752
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"incomplete_sync": null,
+							"is_init_dirty_state": false,
+							"lsp_active": true,
+							"lsp_hover_provider_count": 3,
+							"origin_encoding": "ASCII",
+							"remote_loading": false,
+							"show_definitions": false,
+							"synced": false,
+							"syntax": "Packages/User/Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 807.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 38.0
+	},
+	"input":
+	{
+		"height": 55.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SFTP":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter":
+	{
+		"height": 273.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 320.0
+	},
+	"output.Terminus":
+	{
+		"height": 440.0
+	},
+	"output.Terminus 10":
+	{
+		"height": 172.0
+	},
+	"output.Terminus 11":
+	{
+		"height": 172.0
+	},
+	"output.Terminus 12":
+	{
+		"height": 172.0
+	},
+	"output.Terminus 13":
+	{
+		"height": 172.0
+	},
+	"output.Terminus 14":
+	{
+		"height": 462.0
+	},
+	"output.Terminus 2":
+	{
+		"height": 377.0
+	},
+	"output.Terminus 3":
+	{
+		"height": 386.0
+	},
+	"output.Terminus 4":
+	{
+		"height": 172.0
+	},
+	"output.Terminus 5":
+	{
+		"height": 172.0
+	},
+	"output.Terminus 6":
+	{
+		"height": 172.0
+	},
+	"output.Terminus 7":
+	{
+		"height": 172.0
+	},
+	"output.Terminus 8":
+	{
+		"height": 172.0
+	},
+	"output.Terminus 9":
+	{
+		"height": 172.0
+	},
+	"output.diagnostics":
+	{
+		"height": 308.0
+	},
+	"output.exec":
+	{
+		"height": 301.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 295.0
+	},
+	"output.language servers":
+	{
+		"height": 302.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.references":
+	{
+		"height": 493.0
+	},
+	"output.sftp":
+	{
+		"height": 394.0
+	},
+	"output.textarea":
+	{
+		"height": 172.0
+	},
+	"output.wallabyjs":
+	{
+		"height": 409.0
+	},
+	"output.wallabyjs_console":
+	{
+		"height": 536.0
+	},
+	"pinned_build_system": "",
+	"project": "excel.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"rout",
+				"src/router/Router.js"
+			],
+			[
+				"rou",
+				"src/router/Router.js"
+			],
+			[
+				"das",
+				"src/pages/Dashboard.js"
+			],
+			[
+				"page",
+				"src/core/Page.js"
+			],
+			[
+				"paeg",
+				"src/core/Page.js"
+			],
+			[
+				"clie",
+				"src/core/clients/LocalClient.js"
+			],
+			[
+				"pro",
+				"src/core/StateProcessor.js"
+			],
+			[
+				"crea",
+				"src/pages/createDashboard.template.js"
+			],
+			[
+				"pr",
+				"src/core/StateProcessor.js"
+			],
+			[
+				"proc",
+				"src/core/StateProcessor.js"
+			],
+			[
+				"loca",
+				"src/core/clients/LocalClient.js"
+			],
+			[
+				"base",
+				"src/core/Base.js"
+			],
+			[
+				"ex",
+				"src/components/excel/Excel.js"
+			],
+			[
+				"cl",
+				"src/core/clients/LocalClient.js"
+			],
+			[
+				"diff",
+				"src/core/store/StoreDiff.js"
+			],
+			[
+				"hea",
+				"src/components/header/Header.js"
+			],
+			[
+				"spre",
+				"src/pages/Spreadsheets.js"
+			],
+			[
+				"cons",
+				"src/core/constants.js"
+			],
+			[
+				"red",
+				"src/redux/reducer.js"
+			],
+			[
+				"store",
+				"src/core/store/StoreDiff.js"
+			],
+			[
+				"cre",
+				"src/core/store/createStore.js"
+			],
+			[
+				"dash",
+				"src/pages/Dashboard.js"
+			],
+			[
+				"router",
+				"src/router/Router.js"
+			],
+			[
+				"sprea",
+				"src/pages/Spreadsheets.js"
+			],
+			[
+				"rot",
+				"src/router/Router.js"
+			],
+			[
+				"tab",
+				"src/components/table/Table.js"
+			],
+			[
+				".pro",
+				"excel.sublime-project"
+			],
+			[
+				"exce",
+				"src/components/excel/Excel.js"
+			],
+			[
+				"",
+				".eslintrc"
+			],
+			[
+				"we",
+				"webpack.config.js"
+			],
+			[
+				"index.js",
+				"src/index.js"
+			],
+			[
+				"jes",
+				"jest.config.js"
+			],
+			[
+				"vscode",
+				".vscode/launch.json"
+			],
+			[
+				"sp",
+				"src/pages/Spreadsheets.js"
+			],
+			[
+				"sto",
+				"src/core/store/StoreDiff.js"
+			],
+			[
+				"pa",
+				"src/core/Page.js"
+			],
+			[
+				"route",
+				"src/router/Router.js"
+			],
+			[
+				"obs",
+				"src/core/Observer.js"
+			],
+			[
+				"re",
+				"src/redux/reducer.js"
+			],
+			[
+				"set",
+				"src/__tests__/setup.js"
+			],
+			[
+				"fee",
+				"src/__tests__/core/store/fetchState.test.js"
+			],
+			[
+				"fetch",
+				"src/core/store/fetchState.js"
+			],
+			[
+				".eslint",
+				".eslintrc"
+			],
+			[
+				"esli",
+				".eslintrc"
+			],
+			[
+				"fe",
+				"src/core/store/fetchState.js"
+			],
+			[
+				"redu",
+				"src/redux/reducer.js"
+			],
+			[
+				"wa",
+				"wallaby.js"
+			],
+			[
+				"creasote",
+				"src/__tests__/core/store/createStore.test.js"
+			],
+			[
+				"utils",
+				"src/core/utils.js"
+			],
+			[
+				"for",
+				"src/components/formula/Formula.js"
+			],
+			[
+				"vari",
+				"src/scss/_variables.scss"
+			],
+			[
+				"Ob",
+				"src/core/Observer.js"
+			],
+			[
+				"dom",
+				"src/core/Dom.js"
+			],
+			[
+				"obj",
+				"src/__tests__/core/observer.test.js"
+			],
+			[
+				"ob",
+				"src/core/Observer.js"
+			],
+			[
+				"feth",
+				"src/core/store/fetchState.js"
+			],
+			[
+				"crestes",
+				"src/__tests__/core/store/createStore.test.js"
+			],
+			[
+				"fet",
+				"src/__tests__/core/store/fetchState.test.js"
+			],
+			[
+				"creasto.tes",
+				"src/__tests__/core/store/createStore.test.js"
+			],
+			[
+				"store.test",
+				"src/__tests__/core/store/createStore.test.js"
+			],
+			[
+				"ov",
+				"src/core/Observer.js"
+			],
+			[
+				"obse.test",
+				"src/__tests__/core/observer.test.js"
+			],
+			[
+				"htm",
+				"src/index.html"
+			],
+			[
+				"header",
+				"src/components/header/Header.js"
+			],
+			[
+				"setup",
+				"src/__tests__/setup.js"
+			],
+			[
+				".test",
+				"src/__tests__/core/store/fetchState.test.js"
+			],
+			[
+				"crea.tes",
+				"src/__tests__/core/store/createStore.test.js"
+			],
+			[
+				"test",
+				"src/core/store/createStore.js"
+			],
+			[
+				"ta",
+				"src/components/table/Table.js"
+			],
+			[
+				"ation",
+				"src/redux/actions.js"
+			],
+			[
+				"uti",
+				"src/core/utils.js"
+			],
+			[
+				"Table.js",
+				"src/components/table/Table.js"
+			],
+			[
+				".scss",
+				"src/scss/index.scss"
+			],
+			[
+				".scs",
+				"src/scss/index.scss"
+			],
+			[
+				"Tabl",
+				"src/components/table/Table.js"
+			],
+			[
+				".js",
+				"webpack.config.js"
+			],
+			[
+				"id",
+				"src/index.html"
+			],
+			[
+				"Tab",
+				"src/scss/table.scss"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"pakc",
+				"package.json"
+			],
+			[
+				"scss",
+				"src/scss/dashboard.scss"
+			],
+			[
+				"ty",
+				"src/redux/types.js"
+			],
+			[
+				"action",
+				"src/redux/actions.js"
+			],
+			[
+				"cre.tes",
+				"src/__tests__/core/store/createStore.test.js"
+			],
+			[
+				"test.js",
+				"src/__tests__/core/observer.test.js"
+			],
+			[
+				"pac",
+				"package.json"
+			],
+			[
+				"table",
+				"src/components/table/Table.js"
+			],
+			[
+				"te",
+				"src/__tests__/core/store/createStore.test.js"
+			],
+			[
+				"Rout",
+				"src/router/Router.js"
+			],
+			[
+				"base.js",
+				"src/core/Base.js"
+			],
+			[
+				".je",
+				".vscode/settings.json"
+			],
+			[
+				"table.js",
+				"src/components/table/Table.js"
+			],
+			[
+				".vue",
+				"src/pages/Blog/Blog.vue"
+			],
+			[
+				"variable",
+				"src/scss/_variables.scss"
+			],
+			[
+				".html",
+				"src/index.html"
+			],
+			[
+				"dashbo",
+				"src/pages/Dashboard.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 144.0,
+		"last_filter": "storage",
+		"selected_items":
+		[
+			[
+				"storage",
+				"storage"
+			],
+			[
+				"class",
+				"super(root, {\n      listeners: ['click'],\n      subscribed: ['selectedCellStyleState', 'selectedCellIdState'],\n      ...options,\n    })"
+			],
+			[
+				"re",
+				"require('mini-css-extract-plugin')"
+			],
+			[
+				"css",
+				"css"
+			],
+			[
+				"",
+				"_createNewSpreadsheet"
+			],
+			[
+				"sub",
+				"subscribe"
+			],
+			[
+				"root",
+				"getRoot"
+			],
+			[
+				"table",
+				"createTableList"
+			],
+			[
+				"dashbo",
+				"createDashboard"
+			],
+			[
+				"ut",
+				"Utils\n"
+			],
+			[
+				"base",
+				"Base"
+			],
+			[
+				"store",
+				"createStore"
+			],
+			[
+				"ise",
+				"isEqual"
+			],
+			[
+				"createTableList",
+				"createTableList"
+			],
+			[
+				"cap",
+				"capitalize"
+			]
+		],
+		"width": 770.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 448.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

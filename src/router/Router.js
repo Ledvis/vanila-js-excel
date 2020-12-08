@@ -1,5 +1,6 @@
 import { $ } from '@/core/Dom';
 import { CurrentRoute } from '@/router/CurrentRoute';
+import { Loader } from '@/core/ui/Loader.js';
 
 /**
  * @description
@@ -15,6 +16,7 @@ export class Router {
    */
   constructor(selector, { routes, defaultRoute }) {
     this.$placeholder = $(selector);
+    this.$loader = new Loader();
     this.changeRoute = this.changeRoute.bind(this);
     this.routes = routes;
     this.defaultRoute = defaultRoute;
@@ -35,7 +37,8 @@ export class Router {
    * @description
    * @memberof Router
    */
-  changeRoute() {
+  async changeRoute() {
+    this.$placeholder.clear().append(this.$loader);
     if (this.page) this.page.destroyed();
     if (['', '#'].includes(CurrentRoute.path)) CurrentRoute.path = `#${this.defaultRoute}`;
 
@@ -43,8 +46,8 @@ export class Router {
     const PageClass = routeMap.includes(CurrentRoute.name) ? this.routes[CurrentRoute.name] : this.routes.notFound;
 
     this.page = new PageClass();
-    this.$placeholder.clear();
-    this.$placeholder.append(this.page.getRoot());
+    const $root = await this.page.getRoot();
+    this.$placeholder.clear().append($root);
     this.page.mounted();
   }
 }
