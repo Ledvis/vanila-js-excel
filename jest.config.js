@@ -1,17 +1,19 @@
 module.exports = {
-  moduleFileExtensions: ['js'],
-  testMatch: ['**/__tests__/**/*.test.js'],
-  transformIgnorePatterns: ['<rootDir>/node_modules/'],
-  setupFiles: [
-    '<rootDir>/src/__tests__/setup.js',
-  ],
-  transform: {
-    '^.+\\.js$': 'babel-jest',
+  ...require('./test/jest-common'),
+  collectCoverageFrom: ['**/src/**/*.js'],
+  coverageThreshold: {
+    'global': {
+      statements: 15,
+      branches: 10,
+      functions: 15,
+      lines: 15,
+    },
+    './src/__tests__/core/store/createStore.test.js': {
+      statements: 100,
+      branches: 80,
+      functions: 100,
+      lines: 100,
+    },
   },
-  moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
-    '^@/core(.*)$': '<rootDir>/src/core/$1',
-  },
-  coverageDirectory: './coverage/',
-  collectCoverage: true,
+  projects: ['./test/jest.lint.js', './test/jest.client.js', './test/jest.server.js'],
 };

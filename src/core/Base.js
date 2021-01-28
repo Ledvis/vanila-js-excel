@@ -33,8 +33,7 @@ export default class Base extends Listener {
    * @description
    * @memberof Base
    */
-  created() {
-  }
+  created() {}
 
   /**
    * @description

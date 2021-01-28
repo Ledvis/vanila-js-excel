@@ -52,14 +52,14 @@ describe('createStore', () => {
   it('should return state object IF store has state', () => {
     const mockLocalStore = {
       'spreadsheet:1605638074751': {
-        "columnsWidthState": {},
-        "rowsHeightState": {},
-        "cellDataState": {
-            "0:0": ""
+        columnsWidthState: {},
+        rowsHeightState: {},
+        cellDataState: {
+          '0:0': '',
         },
-        "modifiedState": 1605813572822
-      }
-    }
+        modifiedState: 1605813572822,
+      },
+    };
 
     localStorage.store = mockLocalStore;
     const store = createStore(reducer, mockInitialState);
@@ -77,18 +77,18 @@ describe('createStore', () => {
       ...mockInitialState.initialState,
       ...{
         cellDataState: {
-          [mockValidAction.id]: mockValidAction.value
+          [mockValidAction.id]: mockValidAction.value,
         },
         selectedCellTextState: mockValidAction.value,
         selectedCellIdState: mockValidAction.id,
-      }
+      },
     };
 
     const store = createStore(reducer, mockInitialState);
     store.dispatch(mockValidAction);
 
     expect(mockEmit).toHaveBeenCalledWith(mockInitialState.id, mockStorageState);
-    expect(store.getState()).toEqual(mockStorageState)
+    expect(store.getState()).toEqual(mockStorageState);
   });
 
   it('should subscribe for event', () => {

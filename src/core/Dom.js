@@ -11,7 +11,7 @@ class Dom {
   constructor(selector) {
     /**
      * @property {HTMLElement}
-    */
+     */
 
     if (selector === null) throw new Error('DOM selector can\'t be null');
 

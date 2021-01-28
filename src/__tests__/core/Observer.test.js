@@ -45,7 +45,7 @@ describe('Observer', () => {
     observer.on(mockEventName1, mockCb1);
     observer.on(mockEventName2, mockCb2);
 
-    observer.emit(mockEventName1, mockArrg)
+    observer.emit(mockEventName1, mockArrg);
 
     expect(mockCb1).toHaveBeenCalledWith(mockArrg);
     expect(mockCb2).not.toHaveBeenCalled();

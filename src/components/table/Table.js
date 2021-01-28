@@ -11,7 +11,9 @@ const styleKeys = Object.keys(DEFAULT_TOOLBAR_STYLES);
 
 const ARROW_KEY = { up: 'ArrowUp', right: 'ArrowRight', down: 'ArrowDown', left: 'ArrowLeft' };
 export const ALLOWED_KEYBOARD_KEYS = {
-  enter: 'Enter', tab: 'Tab', ...ARROW_KEY,
+  enter: 'Enter',
+  tab: 'Tab',
+  ...ARROW_KEY,
 };
 
 /**
@@ -20,7 +22,7 @@ export const ALLOWED_KEYBOARD_KEYS = {
  * @class className
  */
 export default class Table extends Base {
-  static rowsCount = 15
+  static rowsCount = 15;
 
   /**
    *Creates an instance of Table.
@@ -37,7 +39,7 @@ export default class Table extends Base {
     });
   }
 
-  static className = 'excel__table'
+  static className = 'excel__table';
 
   /**
    * @description
@@ -62,9 +64,8 @@ export default class Table extends Base {
    */
   onStoreUpdate({ selectedCellTextState, selectedCellStyleState }) {
     if (selectedCellTextState !== this.selector.$current.text()) {
-      this.selector.$current.text(hasFormula(selectedCellTextState, true) ?
-        parseValue(selectedCellTextState) :
-        selectedCellTextState
+      this.selector.$current.text(
+        hasFormula(selectedCellTextState, true) ? parseValue(selectedCellTextState) : selectedCellTextState,
       );
     }
     if (selectedCellStyleState) this.selector.applyStyles(selectedCellStyleState);
@@ -95,7 +96,10 @@ export default class Table extends Base {
   selectCellsGroup(target) {
     this.selector.selectGroup(target);
 
-    this.$emit('table:groupSelected', this.selector.group.map(($cell) => $cell.dataAttr().id));
+    this.$emit(
+        'table:groupSelected',
+        this.selector.group.map(($cell) => $cell.dataAttr().id),
+    );
   }
 
   /**

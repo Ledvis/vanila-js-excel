@@ -1,3 +1,5 @@
+const isTest = String(process.env.NODE_ENV) === 'test';
+
 module.exports = {
   presets: [
     [
@@ -6,6 +8,7 @@ module.exports = {
         targets: {
           node: 'current',
         },
+        modules: isTest ? 'commonjs' : false,
       },
     ],
   ],
