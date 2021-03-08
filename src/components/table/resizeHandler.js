@@ -27,15 +27,19 @@ export default function($root, target) {
     const cellElements = $root.findAll(`[data-type="cell-${targetIndex}"]`);
     let targetDelta;
     let value;
-    const sliderOffset = resizerType === RESIZER_COLUMN ?
-      { 'bottom': -tableHeight + 'px' } :
-      { 'right': -tableWidth + 'px' };
+    const sliderOffset =
+      resizerType === RESIZER_COLUMN ? { bottom: -tableHeight + 'px' } : { right: -tableWidth + 'px' };
 
     $slider.css(sliderOffset);
     $resizer.css({ opacity: 1 });
 
     const {
-      x: parentX, y: parentY, right: parentRight, bottom: parentBottom, width: parentWidth, height: parentHeight,
+      x: parentX,
+      y: parentY,
+      right: parentRight,
+      bottom: parentBottom,
+      width: parentWidth,
+      height: parentHeight,
     } = $parent.position();
 
     document.onmousemove = ({ x: pageX, y: pageY }) => {
@@ -60,7 +64,7 @@ export default function($root, target) {
         $parent.css({ width: value });
         $resizer.css({ right: 0 });
         $slider.css({ bottom: 0 });
-        cellElements.forEach((el) => el.style.width = value);
+        cellElements.forEach((el) => (el.style.width = value));
       } else if (resizerType === RESIZER_ROW) {
         value = parentHeight + targetDelta + 'px';
 

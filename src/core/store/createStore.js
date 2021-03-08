@@ -11,7 +11,7 @@ import { clone } from '@/core/utils';
 export function createStore(reducer, { id, initialState } = {}) {
   const existedState = JSON.parse(localStorage.getItem(id));
   let state = reducer(existedState ? existedState : initialState);
-  const observer = new Observer;
+  const observer = new Observer();
 
   return {
     subscribe(cb) {

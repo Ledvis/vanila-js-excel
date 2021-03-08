@@ -82,11 +82,11 @@ export function debounce(fn, wait) {
 }
 
 /**
-   * @description
-   * @param {String} [value='']
-   * @param {Boolean} [strictEquality=false]
-   * @return {Boolean}
-   */
+ * @description
+ * @param {String} [value='']
+ * @param {Boolean} [strictEquality=false]
+ * @return {Boolean}
+ */
 export function hasFormula(value = '', strictEquality = false) {
   if (!value) return false;
 

@@ -25,7 +25,7 @@ export default class Formula extends Base {
     });
   }
 
-  static className = 'excel__formula'
+  static className = 'excel__formula';
 
   /**
    * @description

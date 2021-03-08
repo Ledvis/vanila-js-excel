@@ -11,7 +11,7 @@ import { debounce, isEqual } from '@/core/utils';
  * @class className
  */
 export default class Toolbar extends Base {
-  static className = 'excel__toolbar'
+  static className = 'excel__toolbar';
 
   /**
    *Creates an instance of Toolbar.
@@ -61,10 +61,12 @@ export default class Toolbar extends Base {
       const newStyles = JSON.parse(style);
 
       this.$dispatch(updateStylesAction(newStyles));
-      this.$dispatch(saveCustomStyles({
-        id: this.selectedCellId,
-        styles: newStyles,
-      }));
+      this.$dispatch(
+          saveCustomStyles({
+            id: this.selectedCellId,
+            styles: newStyles,
+          }),
+      );
     }
   }
 
@@ -90,7 +92,7 @@ export default class Toolbar extends Base {
   mounted() {
     super.mounted();
 
-    this.$on('table:groupSelected', (cellIds) => this.selectedCellId = cellIds);
+    this.$on('table:groupSelected', (cellIds) => (this.selectedCellId = cellIds));
   }
 
   /**

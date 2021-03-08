@@ -7,7 +7,7 @@ import { ALLOWED_KEYBOARD_KEYS } from './Table';
  * @class SelectHandler
  */
 export class SelectHandler {
-  static className = 'selected'
+  static className = 'selected';
 
   /**
    *Creates an instance of SelectHandler.
@@ -58,7 +58,7 @@ export class SelectHandler {
     if (end > start) {
       [end, start] = [start, end];
     }
-    const delta = (start - end) + 1;
+    const delta = start - end + 1;
 
     return new Array(delta).fill('').map((_, index) => index + end);
   }
@@ -94,7 +94,7 @@ export class SelectHandler {
    * @memberof SelectHandler
    */
   normalizeEl(target) {
-    return target = 'el' in target ? target : $(target);
+    return (target = 'el' in target ? target : $(target));
   }
 
   /**

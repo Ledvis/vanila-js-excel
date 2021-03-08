@@ -26,7 +26,7 @@ function toChar(_, index) {
  * @return {String}
  */
 function createColumn(columnsWidth = {}) {
-  return (char, index) => (
+  return (char, index) =>
     `<div 
       class="column"
       style="width: ${columnsWidth[index] || DEFAULT_COLUMN_WIDTH}" 
@@ -37,8 +37,7 @@ function createColumn(columnsWidth = {}) {
         <span class="resizer resizer--column" data-resizer="column" >
           <span class="resizer__slider" />
         </span>
-      </div>`
-  );
+      </div>`;
 }
 
 /**
@@ -47,9 +46,11 @@ function createColumn(columnsWidth = {}) {
  * @return {String}
  */
 function parseStyles(styles) {
-  return Object.keys(styles).map((key) => {
-    return `${[camelCaseToSnakeCase(key)]}: ${styles[key]}`;
-  }).join('; ');
+  return Object.keys(styles)
+      .map((key) => {
+        return `${[camelCaseToSnakeCase(key)]}: ${styles[key]}`;
+      })
+      .join('; ');
 }
 
 /**
@@ -121,7 +122,10 @@ export function createTable({ rowsCount, columnsWidth, rowsHeight, cellData, cus
   rows.push(createRow('', columns));
 
   for (let index = 0; index < rowsCount; index++) {
-    const cells = new Array(columnsCount).fill('').map(createCell(index, { columnsWidth, cellData, customStyles })).join('');
+    const cells = new Array(columnsCount)
+        .fill('')
+        .map(createCell(index, { columnsWidth, cellData, customStyles }))
+        .join('');
 
     rows.push(createRow(index + 1, cells, rowsHeight));
   }

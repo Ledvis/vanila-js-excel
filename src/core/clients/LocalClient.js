@@ -87,9 +87,9 @@ export class LocalClient {
     }
 
     return states;
-  }
+  };
 
   #removeSpreadsheet = (id) => {
     localStorage.removeItem(`spreadsheet:${id}`);
-  }
+  };
 }

@@ -26,13 +26,13 @@ export default class StoreDiff {
     let prevState = this.store.getState();
 
     const storeListener = debounce((state) => {
-      Object.keys(state).forEach(((stateKey) => {
-        if (!(isEqual(prevState[stateKey], state[stateKey]))) {
+      Object.keys(state).forEach((stateKey) => {
+        if (!isEqual(prevState[stateKey], state[stateKey])) {
           components.forEach((component) => {
             if (component.isSubscribed(stateKey)) component.onStoreUpdate({ [stateKey]: state[stateKey] });
           });
         }
-      }));
+      });
 
       prevState = this.store.getState();
     }, 300);

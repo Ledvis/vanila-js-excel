@@ -6,26 +6,28 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
-const getFileName = (ext) => isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`;
+const getFileName = (ext) => (isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`);
 const getJSLoaders = () => {
-  const loaders = [{
-    loader: 'babel-loader',
-    // Include babel preset
-    options: {
-      presets: [
-        [
-          '@babel/preset-env',
-          {
-            targets: {
-              // only include polyfills and code transforms needed for users whose browsers have >0.25% market share
-              browsers: '> 0.25%, not dead',
+  const loaders = [
+    {
+      loader: 'babel-loader',
+      // Include babel preset
+      options: {
+        presets: [
+          [
+            '@babel/preset-env',
+            {
+              targets: {
+                // only include polyfills and code transforms needed for users whose browsers have >0.25% market share
+                browsers: '> 0.25%, not dead',
+              },
             },
-          },
+          ],
         ],
-      ],
-      plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-proposal-private-methods'],
+        plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-proposal-private-methods'],
+      },
     },
-  }];
+  ];
 
   if (isDev) loaders.push('eslint-loader');
 

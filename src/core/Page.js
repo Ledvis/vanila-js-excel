@@ -16,7 +16,7 @@ export class Page {
 
   /** */
   constructor() {
-    const id = `${LOCAL_ACTION.spreadsheet}:${(CurrentRoute.param || Date.now())}`;
+    const id = `${LOCAL_ACTION.spreadsheet}:${CurrentRoute.param || Date.now()}`;
 
     this.processor = new StateProcessor(new LocalClient(id));
     this.store = createStore(reducer, { id, initialState });

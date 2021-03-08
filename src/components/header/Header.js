@@ -10,7 +10,7 @@ import { LOCAL_ACTION } from '@/core/constants';
  * @class Header
  */
 export default class Header extends Base {
-  static className = 'excel__header'
+  static className = 'excel__header';
 
   /**
    *Creates an instance of Header.

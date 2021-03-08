@@ -20,9 +20,11 @@ export class Spreadsheets extends Page {
   constructor() {
     super();
 
-    this.store.dispatch(updateDate({
-      value: Date.now(),
-    }));
+    this.store.dispatch(
+        updateDate({
+          value: Date.now(),
+        }),
+    );
 
     this.child = new Excel({
       components: [Header, Toolbar, Formula, Table],

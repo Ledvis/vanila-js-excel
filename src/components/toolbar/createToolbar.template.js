@@ -7,7 +7,9 @@ import { DEFAULT_TOOLBAR_STYLES } from '@/core/constants';
  */
 function createButton({ icon, isActive, style }) {
   return `
-        <div data-type="button" data-style='${JSON.stringify(style)}' class="button ${isActive ? 'button--active' : ''}">
+        <div data-type="button" data-style='${JSON.stringify(style)}' class="button ${
+    isActive ? 'button--active' : ''
+}">
           <i class="material-icons">${icon}</i>
         </div>
       `;

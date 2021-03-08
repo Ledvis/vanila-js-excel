@@ -7,7 +7,11 @@ import { CurrentRoute } from '@/router/CurrentRoute';
  */
 function fabricDate(date) {
   return date.toLocaleString('uk-UK', {
-    year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
   });
 }
 
@@ -17,11 +21,12 @@ function fabricDate(date) {
  * @return {String}
  */
 export function createTableList(states) {
-  const list = states.map(({ title, created, modified }) => {
-    const _created = fabricDate(new Date(created));
-    const _modified = fabricDate(new Date(modified));
+  const list = states
+      .map(({ title, created, modified }) => {
+        const _created = fabricDate(new Date(created));
+        const _modified = fabricDate(new Date(modified));
 
-    return `<li class="db__record">
+        return `<li class="db__record">
               <a href="#spreadsheets/${created}">${title}</a>
               <strong class="db__created">
                 <span class="db__date">${_created}</span>
@@ -30,7 +35,8 @@ export function createTableList(states) {
                 <span class="db__date">${_modified}</span>
               </strong>
             </li>`;
-  }).join('');
+      })
+      .join('');
 
   return `<ul class="db__list">
             ${list}
