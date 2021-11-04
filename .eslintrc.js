@@ -30,6 +30,8 @@ module.exports = {
       },
     ],
     'object-curly-spacing': ['error', 'always'],
+    'no-debugger': 0,
+    'require-jsdoc': 0,
   },
   settings: { 'import/resolver': 'node' },
   overrides: [

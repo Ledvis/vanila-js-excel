@@ -1,5 +1,3 @@
-import { CurrentRoute } from '@/router/CurrentRoute';
-
 /**
  * @description
  * @param {Object} date
@@ -27,25 +25,20 @@ export function createTableList(states) {
         const _modified = fabricDate(new Date(modified));
 
         return `<li class="db__record">
-              <a href="#spreadsheets/${created}">${title}</a>
-              <strong class="db__created">
-                <span class="db__date">${_created}</span>
-              </strong>
-              <strong>
-                <span class="db__date">${_modified}</span>
-              </strong>
-            </li>`;
-      })
-      .join('');
+                  <a href="#spreadsheets/${created}">${title}</a>
+                  <strong class="db__created">
+                    <span class="db__date">${_created}</span>
+                  </strong>
+                  <strong>
+                    <span class="db__date">${_modified}</span>
+                  </strong>
+                </li>`;
+      }).join('');
 
   return `<ul class="db__list">
             ${list}
           </ul>`;
 }
-
-window._createNewSpreadsheet = () => {
-  CurrentRoute.path = `#spreadsheets/${Date.now()}`;
-};
 
 /**
  * @description
@@ -54,7 +47,7 @@ window._createNewSpreadsheet = () => {
 function createNewSpreadsheet() {
   return `<div class="db__new">
             <div class="db__view">
-              <a onclick="_createNewSpreadsheet();" class="db__create">
+              <a class="db__create">
                 New <br /> Table
               </a>
             </div>

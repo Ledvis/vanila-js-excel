@@ -7,9 +7,7 @@ import { DEFAULT_TOOLBAR_STYLES } from '@/core/constants';
  */
 function createButton({ icon, isActive, style }) {
   return `
-        <div data-type="button" data-style='${JSON.stringify(style)}' class="button ${
-    isActive ? 'button--active' : ''
-}">
+        <div data-type="button" data-style='${JSON.stringify(style)}' class="button ${isActive ? 'button--active' : ''}">
           <i class="material-icons">${icon}</i>
         </div>
       `;
@@ -67,5 +65,8 @@ export default function createToolbar(state) {
     },
   ];
 
-  return buttons.map(createButton).join('');
+  return `
+    <div>${buttons.map(createButton).join('')}</div>
+    <div><button data-type="share" class="share" type="button"><i class="material-icons">share</i>Share</button></div>
+  `;
 }

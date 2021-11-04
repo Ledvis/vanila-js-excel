@@ -1,0 +1,30 @@
+.drop-down {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: $white;
+  border: 1px solid #000;
+
+  &__arrow {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 30vh;
+    padding: 5px 10px;
+    background-color: $white;
+    border: 1px solid #000;
+    overflow-y: scroll;
+  }
+
+  input {
+    background-color: transparent;
+    border: none;
+  }
+}

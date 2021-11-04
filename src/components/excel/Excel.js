@@ -39,11 +39,10 @@ export default class Excel {
     };
 
     this.components = this.components.map((Component) => {
-      const $childEl = $.create('div', Component.className);
-      const childComponent = new Component($childEl, options);
+      const childComponent = new Component(options);
 
-      $childEl.html(childComponent.toHTML());
-      $rootEl.append($childEl);
+      childComponent.$root.html(childComponent.toHTML());
+      $rootEl.append(childComponent.$root);
 
       return childComponent;
     });

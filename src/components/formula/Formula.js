@@ -1,6 +1,7 @@
 import Base from '@/core/Base';
 import { debounce } from '@/core/utils';
 import { updateTextAction } from '@/redux/actions';
+import { $ } from '@/core/Dom';
 
 const ALLOWED_KEYBOARD_KEYS = ['Enter', 'Tab'];
 
@@ -12,11 +13,12 @@ const ALLOWED_KEYBOARD_KEYS = ['Enter', 'Tab'];
 export default class Formula extends Base {
   /**
    *Creates an instance of Formula.
-   * @param {Object} root
    * @param {Object.<string, *>} options
    * @memberof Formula
    */
-  constructor(root, options) {
+  constructor(options) {
+    const root = $.create('div', Formula.className);
+
     super(root, {
       listeners: ['input', 'keydown'],
       name: 'Formula',

@@ -1,0 +1,23 @@
+.dialog {
+  @include absolute-center;
+
+  z-index: 1;
+  min-width: 640px;
+  max-width: 900px;
+  min-height: 292px;
+  max-height: 350px;
+  padding: 10px;
+  background-color: $gray-1;
+  border-radius: 5px;
+
+  &__close {
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+
+    i {
+      pointer-events: none;
+    }
+  }
+}

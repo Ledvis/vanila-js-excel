@@ -14,11 +14,12 @@ export default class Header extends Base {
 
   /**
    *Creates an instance of Header.
-   * @param {Object} root
    * @param {Object} options
    * @memberof Header
    */
-  constructor(root, options) {
+  constructor(options) {
+    const root = $.create('div', Header.className);
+
     super(root, {
       listeners: ['input', 'click'],
       ...options,

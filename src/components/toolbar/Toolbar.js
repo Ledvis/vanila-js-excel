@@ -1,9 +1,12 @@
 import Base from '@/core/Base';
+import Dialog from '@/core/ui/Dialog';
+import DropDown from '@/core/ui/Drop-down';
 import { DEFAULT_TOOLBAR_STYLES } from '@/core/constants';
 import { $ } from '@/core/Dom';
 import createToolbar from '@/components/toolbar/createToolbar.template';
 import { updateStylesAction, saveCustomStyles } from '@/redux/actions';
-import { debounce, isEqual } from '@/core/utils';
+import { isEqual } from '@/core/utils';
+import countries from '@/countries.json';
 
 /**
  * @description
@@ -15,11 +18,12 @@ export default class Toolbar extends Base {
 
   /**
    *Creates an instance of Toolbar.
-   * @param {Object.<String, *>} root
    * @param {*} options
    * @memberof Toolbar
    */
-  constructor(root, options) {
+  constructor(options) {
+    const root = $.create('div', Toolbar.className);
+
     super(root, {
       listeners: ['click'],
       subscribed: ['selectedCellStyleState', 'selectedCellIdState'],
@@ -27,6 +31,17 @@ export default class Toolbar extends Base {
     });
 
     this.state = DEFAULT_TOOLBAR_STYLES;
+    const select = new DropDown({
+      value: 'Ukraine',
+      options: countries.map((country) => {
+        return {
+          id: country.id,
+          value: country.name,
+        };
+      }),
+    });
+
+    this.dialog = new Dialog({ contentEl: select.$root.el });
   }
 
   /**
@@ -35,8 +50,6 @@ export default class Toolbar extends Base {
    */
   created() {
     super.created();
-
-    this.onClick = debounce(this.onClick, 300);
   }
 
   /**
@@ -57,16 +70,22 @@ export default class Toolbar extends Base {
     const $target = $(event.target);
     const { type, style } = $target.dataAttr();
 
-    if (type) {
-      const newStyles = JSON.parse(style);
+    switch (type) {
+      case 'button': {
+        const newStyles = JSON.parse(style);
 
-      this.$dispatch(updateStylesAction(newStyles));
-      this.$dispatch(
-          saveCustomStyles({
-            id: this.selectedCellId,
-            styles: newStyles,
-          }),
-      );
+        this.$dispatch(updateStylesAction(newStyles));
+        this.$dispatch(saveCustomStyles({
+          id: this.selectedCellId,
+          styles: newStyles,
+        }));
+
+        break;
+      }
+
+      case 'share': {
+        this.dialog.open();
+      }
     }
   }
 
@@ -93,6 +112,7 @@ export default class Toolbar extends Base {
     super.mounted();
 
     this.$on('table:groupSelected', (cellIds) => (this.selectedCellId = cellIds));
+    this.dialog.open();
   }
 
   /**

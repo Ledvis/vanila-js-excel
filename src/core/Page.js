@@ -14,7 +14,6 @@ import { LOCAL_ACTION } from '@/core/constants';
 export class Page {
   #unsubscribeFn = null;
 
-  /** */
   constructor() {
     const id = `${LOCAL_ACTION.spreadsheet}:${CurrentRoute.param || Date.now()}`;
 

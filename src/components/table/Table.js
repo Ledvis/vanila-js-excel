@@ -6,6 +6,7 @@ import { shouldResize, shouldSelect } from '@/components/table/table.utils';
 import { resizeTableAction, updateTextAction, updateStylesAction } from '@/redux/actions';
 import { DEFAULT_TOOLBAR_STYLES } from '@/core/constants';
 import { isEqual, parseValue, hasFormula } from '@/core/utils';
+import { $ } from '@/core/Dom';
 
 const styleKeys = Object.keys(DEFAULT_TOOLBAR_STYLES);
 
@@ -26,11 +27,12 @@ export default class Table extends Base {
 
   /**
    *Creates an instance of Table.
-   * @param {*} root
    * @param {Object.<string, *>} options
    * @memberof Table
    */
-  constructor(root, options) {
+  constructor(options) {
+    const root = $.create('div', Table.className);
+
     super(root, {
       listeners: ['mousedown', 'keydown', 'input'],
       name: 'Table',

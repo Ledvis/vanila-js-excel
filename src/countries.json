@@ -1,0 +1,1759 @@
+[
+  {
+    "id": 1,
+    "isoCode": "AD",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Andorra"
+  },
+  {
+    "id": 2,
+    "isoCode": "AE",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Vereinigte Arabische Emirate"
+  },
+  {
+    "id": 3,
+    "isoCode": "AF",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Afghanistan"
+  },
+  {
+    "id": 4,
+    "isoCode": "AG",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Antigua und Barbuda"
+  },
+  {
+    "id": 5,
+    "isoCode": "AI",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Anguilla"
+  },
+  {
+    "id": 6,
+    "isoCode": "AL",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Albanien"
+  },
+  {
+    "id": 7,
+    "isoCode": "AM",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Armenien"
+  },
+  {
+    "id": 9,
+    "isoCode": "AO",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Angola"
+  },
+  {
+    "id": 10,
+    "isoCode": "AQ",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Antarktis"
+  },
+  {
+    "id": 11,
+    "isoCode": "AR",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Argentinien"
+  },
+  {
+    "id": 12,
+    "isoCode": "AS",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Samoa"
+  },
+  {
+    "id": 13,
+    "isoCode": "AT",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "\u00d6sterreich"
+  },
+  {
+    "id": 14,
+    "isoCode": "AU",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Australien"
+  },
+  {
+    "id": 15,
+    "isoCode": "AW",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Aruba"
+  },
+  {
+    "id": 16,
+    "isoCode": "AZ",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Aserbaidschan"
+  },
+  {
+    "id": 17,
+    "isoCode": "BA",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Bosnien-Herzegowina"
+  },
+  {
+    "id": 18,
+    "isoCode": "BB",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Barbados"
+  },
+  {
+    "id": 19,
+    "isoCode": "BD",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Bangladesh"
+  },
+  {
+    "id": 20,
+    "isoCode": "BE",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Belgien"
+  },
+  {
+    "id": 21,
+    "isoCode": "BF",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Burkina Faso"
+  },
+  {
+    "id": 22,
+    "isoCode": "BG",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Bulgarien"
+  },
+  {
+    "id": 23,
+    "isoCode": "BH",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Bahrain"
+  },
+  {
+    "id": 24,
+    "isoCode": "BI",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Burundi"
+  },
+  {
+    "id": 25,
+    "isoCode": "BJ",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Benin"
+  },
+  {
+    "id": 26,
+    "isoCode": "BM",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Bermudas"
+  },
+  {
+    "id": 27,
+    "isoCode": "BN",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Brunei"
+  },
+  {
+    "id": 28,
+    "isoCode": "BO",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Bolivien"
+  },
+  {
+    "id": 29,
+    "isoCode": "BR",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Brasilien"
+  },
+  {
+    "id": 30,
+    "isoCode": "BS",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Bahamas"
+  },
+  {
+    "id": 31,
+    "isoCode": "BT",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Bhutan"
+  },
+  {
+    "id": 32,
+    "isoCode": "BV",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Bouvet Inseln"
+  },
+  {
+    "id": 33,
+    "isoCode": "BW",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Botswana"
+  },
+  {
+    "id": 35,
+    "isoCode": "BZ",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Belize"
+  },
+  {
+    "id": 36,
+    "isoCode": "CA",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Kanada"
+  },
+  {
+    "id": 37,
+    "isoCode": "CC",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Kokosinseln"
+  },
+  {
+    "id": 38,
+    "isoCode": "CD",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Kongo, Demokratische Republik"
+  },
+  {
+    "id": 39,
+    "isoCode": "CF",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Zentralafrikanische Republik"
+  },
+  {
+    "id": 40,
+    "isoCode": "CG",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Kongo"
+  },
+  {
+    "id": 41,
+    "isoCode": "CH",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Schweiz"
+  },
+  {
+    "id": 42,
+    "isoCode": "CI",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Elfenbeink\u00fcste"
+  },
+  {
+    "id": 43,
+    "isoCode": "CK",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Cook Inseln"
+  },
+  {
+    "id": 44,
+    "isoCode": "CL",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Chile"
+  },
+  {
+    "id": 45,
+    "isoCode": "CM",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Kamerun"
+  },
+  {
+    "id": 46,
+    "isoCode": "CN",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "China"
+  },
+  {
+    "id": 47,
+    "isoCode": "CO",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Kolumbien"
+  },
+  {
+    "id": 48,
+    "isoCode": "CR",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Costa Rica"
+  },
+  {
+    "id": 49,
+    "isoCode": "CU",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Kuba"
+  },
+  {
+    "id": 50,
+    "isoCode": "CV",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Kap Verde"
+  },
+  {
+    "id": 51,
+    "isoCode": "CX",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Christmas Island"
+  },
+  {
+    "id": 52,
+    "isoCode": "CY",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Zypern"
+  },
+  {
+    "id": 53,
+    "isoCode": "CZ",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Tschechische Republik"
+  },
+  {
+    "id": 54,
+    "isoCode": "DE",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Deutschland"
+  },
+  {
+    "id": 55,
+    "isoCode": "DJ",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Djibuti"
+  },
+  {
+    "id": 56,
+    "isoCode": "DK",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "D\u00e4nemark"
+  },
+  {
+    "id": 57,
+    "isoCode": "DM",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Dominika"
+  },
+  {
+    "id": 59,
+    "isoCode": "DZ",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Algerien"
+  },
+  {
+    "id": 60,
+    "isoCode": "EC",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Ecuador"
+  },
+  {
+    "id": 61,
+    "isoCode": "EE",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Estland"
+  },
+  {
+    "id": 62,
+    "isoCode": "EG",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "\u00c4gypten"
+  },
+  {
+    "id": 63,
+    "isoCode": "EH",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Westsahara"
+  },
+  {
+    "id": 64,
+    "isoCode": "ER",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Eritrea"
+  },
+  {
+    "id": 65,
+    "isoCode": "ES",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Spanien"
+  },
+  {
+    "id": 66,
+    "isoCode": "ET",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "\u00c4thiopien"
+  },
+  {
+    "id": 67,
+    "isoCode": "FI",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Finnland"
+  },
+  {
+    "id": 68,
+    "isoCode": "FJ",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Fidschi"
+  },
+  {
+    "id": 69,
+    "isoCode": "FK",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Falkland Inseln"
+  },
+  {
+    "id": 70,
+    "isoCode": "FM",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Mikronesien"
+  },
+  {
+    "id": 71,
+    "isoCode": "FO",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "F\u00e4r\u00f6er Inseln"
+  },
+  {
+    "id": 72,
+    "isoCode": "FR",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Frankreich"
+  },
+  {
+    "id": 73,
+    "isoCode": "GA",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Gabun"
+  },
+  {
+    "id": 74,
+    "isoCode": "GD",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Grenada"
+  },
+  {
+    "id": 75,
+    "isoCode": "GE",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Georgien"
+  },
+  {
+    "id": 76,
+    "isoCode": "GF",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Franz\u00f6sisch Guyana"
+  },
+  {
+    "id": 77,
+    "isoCode": "GH",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Ghana"
+  },
+  {
+    "id": 78,
+    "isoCode": "GI",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Gibraltar"
+  },
+  {
+    "id": 79,
+    "isoCode": "GL",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Gr\u00f6nland"
+  },
+  {
+    "id": 80,
+    "isoCode": "GM",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Gambia"
+  },
+  {
+    "id": 81,
+    "isoCode": "GN",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Guinea"
+  },
+  {
+    "id": 82,
+    "isoCode": "GP",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Guadeloupe"
+  },
+  {
+    "id": 83,
+    "isoCode": "GQ",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "\u00c4quatorial Guinea"
+  },
+  {
+    "id": 84,
+    "isoCode": "GR",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Griechenland"
+  },
+  {
+    "id": 85,
+    "isoCode": "GS",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "South Georgia, South Sandwich Isl."
+  },
+  {
+    "id": 86,
+    "isoCode": "GT",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Guatemala"
+  },
+  {
+    "id": 87,
+    "isoCode": "GU",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Guam"
+  },
+  {
+    "id": 88,
+    "isoCode": "GW",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Guinea Bissau"
+  },
+  {
+    "id": 89,
+    "isoCode": "GY",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Guyana"
+  },
+  {
+    "id": 90,
+    "isoCode": "HK",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Hong Kong"
+  },
+  {
+    "id": 91,
+    "isoCode": "HM",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Heard und McDonald Islands"
+  },
+  {
+    "id": 92,
+    "isoCode": "HN",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Honduras"
+  },
+  {
+    "id": 93,
+    "isoCode": "HR",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Kroatien"
+  },
+  {
+    "id": 94,
+    "isoCode": "HT",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Haiti"
+  },
+  {
+    "id": 95,
+    "isoCode": "HU",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Ungarn"
+  },
+  {
+    "id": 96,
+    "isoCode": "ID",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Indonesien"
+  },
+  {
+    "id": 97,
+    "isoCode": "IE",
+    "taxFree": 0,
+    "postCodeFree": 1,
+    "name": "Irland"
+  },
+  {
+    "id": 98,
+    "isoCode": "IL",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Israel"
+  },
+  {
+    "id": 99,
+    "isoCode": "IN",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Indien"
+  },
+  {
+    "id": 100,
+    "isoCode": "IO",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Britisch-Indischer Ozean"
+  },
+  {
+    "id": 101,
+    "isoCode": "IQ",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Irak"
+  },
+  {
+    "id": 102,
+    "isoCode": "IR",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Iran"
+  },
+  {
+    "id": 103,
+    "isoCode": "IS",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Island"
+  },
+  {
+    "id": 104,
+    "isoCode": "IT",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Italien"
+  },
+  {
+    "id": 105,
+    "isoCode": "JM",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Jamaika"
+  },
+  {
+    "id": 106,
+    "isoCode": "JO",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Jordanien"
+  },
+  {
+    "id": 107,
+    "isoCode": "JP",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Japan"
+  },
+  {
+    "id": 108,
+    "isoCode": "KE",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Kenia"
+  },
+  {
+    "id": 109,
+    "isoCode": "KG",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Kirgisistan"
+  },
+  {
+    "id": 110,
+    "isoCode": "KH",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Kambodscha"
+  },
+  {
+    "id": 111,
+    "isoCode": "KI",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Kiribati"
+  },
+  {
+    "id": 112,
+    "isoCode": "KM",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Komoren"
+  },
+  {
+    "id": 113,
+    "isoCode": "KN",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "St. Kitts Nevis Anguilla"
+  },
+  {
+    "id": 114,
+    "isoCode": "KP",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Nord Korea"
+  },
+  {
+    "id": 115,
+    "isoCode": "KR",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "S\u00fcd Korea"
+  },
+  {
+    "id": 116,
+    "isoCode": "KW",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Kuwait"
+  },
+  {
+    "id": 117,
+    "isoCode": "KY",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Kaiman Inseln"
+  },
+  {
+    "id": 118,
+    "isoCode": "KZ",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Kasachstan"
+  },
+  {
+    "id": 119,
+    "isoCode": "LA",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Laos"
+  },
+  {
+    "id": 120,
+    "isoCode": "LB",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Libanon"
+  },
+  {
+    "id": 122,
+    "isoCode": "LI",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Liechtenstein"
+  },
+  {
+    "id": 123,
+    "isoCode": "LK",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Sri Lanka"
+  },
+  {
+    "id": 124,
+    "isoCode": "LR",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Liberia"
+  },
+  {
+    "id": 125,
+    "isoCode": "LS",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Lesotho"
+  },
+  {
+    "id": 126,
+    "isoCode": "LT",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Litauen"
+  },
+  {
+    "id": 127,
+    "isoCode": "LU",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Luxemburg"
+  },
+  {
+    "id": 128,
+    "isoCode": "LV",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Lettland"
+  },
+  {
+    "id": 129,
+    "isoCode": "LY",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Libyen"
+  },
+  {
+    "id": 130,
+    "isoCode": "MA",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Marokko"
+  },
+  {
+    "id": 131,
+    "isoCode": "MC",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Monaco"
+  },
+  {
+    "id": 132,
+    "isoCode": "MD",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Moldavien"
+  },
+  {
+    "id": 133,
+    "isoCode": "MG",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Madagaskar"
+  },
+  {
+    "id": 134,
+    "isoCode": "MH",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Marshall Inseln"
+  },
+  {
+    "id": 135,
+    "isoCode": "MK",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Mazedonien"
+  },
+  {
+    "id": 136,
+    "isoCode": "ML",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Mali"
+  },
+  {
+    "id": 138,
+    "isoCode": "MN",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Mongolei"
+  },
+  {
+    "id": 139,
+    "isoCode": "MO",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Macao"
+  },
+  {
+    "id": 140,
+    "isoCode": "MP",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Marianen"
+  },
+  {
+    "id": 141,
+    "isoCode": "MQ",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Martinique"
+  },
+  {
+    "id": 142,
+    "isoCode": "MR",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Mauretanien"
+  },
+  {
+    "id": 143,
+    "isoCode": "MS",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Montserrat"
+  },
+  {
+    "id": 144,
+    "isoCode": "MT",
+    "taxFree": 0,
+    "postCodeFree": 1,
+    "name": "Malta"
+  },
+  {
+    "id": 145,
+    "isoCode": "MU",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Mauritius"
+  },
+  {
+    "id": 146,
+    "isoCode": "MV",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Malediven"
+  },
+  {
+    "id": 147,
+    "isoCode": "MW",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Malawi"
+  },
+  {
+    "id": 148,
+    "isoCode": "MX",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Mexiko"
+  },
+  {
+    "id": 149,
+    "isoCode": "MY",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Malaysia"
+  },
+  {
+    "id": 150,
+    "isoCode": "MZ",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Mocambique"
+  },
+  {
+    "id": 151,
+    "isoCode": "NA",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Namibia"
+  },
+  {
+    "id": 152,
+    "isoCode": "NC",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Neukaledonien"
+  },
+  {
+    "id": 153,
+    "isoCode": "NE",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Niger"
+  },
+  {
+    "id": 154,
+    "isoCode": "NF",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Norfolk Inseln"
+  },
+  {
+    "id": 155,
+    "isoCode": "NG",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Nigeria"
+  },
+  {
+    "id": 156,
+    "isoCode": "NI",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Nicaragua"
+  },
+  {
+    "id": 157,
+    "isoCode": "NL",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Niederlande"
+  },
+  {
+    "id": 158,
+    "isoCode": "NO",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Norwegen"
+  },
+  {
+    "id": 159,
+    "isoCode": "NP",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Nepal"
+  },
+  {
+    "id": 160,
+    "isoCode": "NR",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Nauru"
+  },
+  {
+    "id": 161,
+    "isoCode": "NU",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Niue"
+  },
+  {
+    "id": 162,
+    "isoCode": "NZ",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Neuseeland"
+  },
+  {
+    "id": 163,
+    "isoCode": "OM",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Oman"
+  },
+  {
+    "id": 164,
+    "isoCode": "PA",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Panama"
+  },
+  {
+    "id": 165,
+    "isoCode": "PE",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Peru"
+  },
+  {
+    "id": 166,
+    "isoCode": "PF",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Franz\u00f6sisch Polynesien"
+  },
+  {
+    "id": 167,
+    "isoCode": "PG",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Papua Neuguinea"
+  },
+  {
+    "id": 168,
+    "isoCode": "PH",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Philippinen"
+  },
+  {
+    "id": 169,
+    "isoCode": "PK",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Pakistan"
+  },
+  {
+    "id": 170,
+    "isoCode": "PL",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Polen"
+  },
+  {
+    "id": 171,
+    "isoCode": "PM",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "St. Pierre und Miquelon"
+  },
+  {
+    "id": 172,
+    "isoCode": "PN",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Pitcairn"
+  },
+  {
+    "id": 173,
+    "isoCode": "PR",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Puerto Rico"
+  },
+  {
+    "id": 174,
+    "isoCode": "PS",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Pal\u00e4stina"
+  },
+  {
+    "id": 175,
+    "isoCode": "PT",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Portugal"
+  },
+  {
+    "id": 176,
+    "isoCode": "PW",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Palau"
+  },
+  {
+    "id": 177,
+    "isoCode": "PY",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Paraguay"
+  },
+  {
+    "id": 179,
+    "isoCode": "RE",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Reunion"
+  },
+  {
+    "id": 180,
+    "isoCode": "RO",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Rum\u00e4nien"
+  },
+  {
+    "id": 181,
+    "isoCode": "RU",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Russland"
+  },
+  {
+    "id": 182,
+    "isoCode": "RW",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Ruanda"
+  },
+  {
+    "id": 183,
+    "isoCode": "SA",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Saudi Arabien"
+  },
+  {
+    "id": 184,
+    "isoCode": "SB",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Solomon Inseln"
+  },
+  {
+    "id": 185,
+    "isoCode": "SC",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Seychellen"
+  },
+  {
+    "id": 186,
+    "isoCode": "SD",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Sudan"
+  },
+  {
+    "id": 187,
+    "isoCode": "SE",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Schweden"
+  },
+  {
+    "id": 188,
+    "isoCode": "SG",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Singapur"
+  },
+  {
+    "id": 189,
+    "isoCode": "SH",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "St. Helena"
+  },
+  {
+    "id": 190,
+    "isoCode": "SI",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Slowenien"
+  },
+  {
+    "id": 191,
+    "isoCode": "SJ",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Svalbard und Jan Mayen Islands"
+  },
+  {
+    "id": 192,
+    "isoCode": "SK",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Slowakei"
+  },
+  {
+    "id": 193,
+    "isoCode": "SL",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Sierra Leone"
+  },
+  {
+    "id": 194,
+    "isoCode": "SM",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "San Marino"
+  },
+  {
+    "id": 195,
+    "isoCode": "SN",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Senegal"
+  },
+  {
+    "id": 196,
+    "isoCode": "SO",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Somalia"
+  },
+  {
+    "id": 197,
+    "isoCode": "SR",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Surinam"
+  },
+  {
+    "id": 198,
+    "isoCode": "ST",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Sao Tome"
+  },
+  {
+    "id": 199,
+    "isoCode": "SV",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "El Salvador"
+  },
+  {
+    "id": 200,
+    "isoCode": "SY",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Syrien"
+  },
+  {
+    "id": 201,
+    "isoCode": "SZ",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Swasiland"
+  },
+  {
+    "id": 202,
+    "isoCode": "TC",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Turks und Kaikos Inseln"
+  },
+  {
+    "id": 203,
+    "isoCode": "TD",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Tschad"
+  },
+  {
+    "id": 204,
+    "isoCode": "TF",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Franz\u00f6sisches S\u00fcd-Territorium"
+  },
+  {
+    "id": 205,
+    "isoCode": "TG",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Togo"
+  },
+  {
+    "id": 206,
+    "isoCode": "TH",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Thailand"
+  },
+  {
+    "id": 207,
+    "isoCode": "TJ",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Tadschikistan"
+  },
+  {
+    "id": 208,
+    "isoCode": "TK",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Tokelau"
+  },
+  {
+    "id": 209,
+    "isoCode": "TM",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Turkmenistan"
+  },
+  {
+    "id": 210,
+    "isoCode": "TN",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Tunesien"
+  },
+  {
+    "id": 211,
+    "isoCode": "TO",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Tonga"
+  },
+  {
+    "id": 213,
+    "isoCode": "TR",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "T\u00fcrkei"
+  },
+  {
+    "id": 214,
+    "isoCode": "TT",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Trinidad Tobago"
+  },
+  {
+    "id": 215,
+    "isoCode": "TV",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Tuvalu"
+  },
+  {
+    "id": 216,
+    "isoCode": "TW",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Taiwan"
+  },
+  {
+    "id": 217,
+    "isoCode": "TZ",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Tansania"
+  },
+  {
+    "id": 218,
+    "isoCode": "UA",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Ukraine"
+  },
+  {
+    "id": 219,
+    "isoCode": "UG",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Uganda"
+  },
+  {
+    "id": 220,
+    "isoCode": "GB",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Vereinigtes K\u00f6nigreich"
+  },
+  {
+    "id": 222,
+    "isoCode": "UY",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Uruguay"
+  },
+  {
+    "id": 223,
+    "isoCode": "UZ",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Usbekistan"
+  },
+  {
+    "id": 224,
+    "isoCode": "VA",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Vatikan"
+  },
+  {
+    "id": 225,
+    "isoCode": "VC",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "St. Vincent"
+  },
+  {
+    "id": 226,
+    "isoCode": "VE",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Venezuela"
+  },
+  {
+    "id": 227,
+    "isoCode": "VG",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Virgin Island (Brit.)"
+  },
+  {
+    "id": 228,
+    "isoCode": "VI",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Virgin Island (USA)"
+  },
+  {
+    "id": 229,
+    "isoCode": "VN",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Vietnam"
+  },
+  {
+    "id": 230,
+    "isoCode": "VU",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Vanuatu"
+  },
+  {
+    "id": 231,
+    "isoCode": "WF",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Wallis et Futuna"
+  },
+  {
+    "id": 232,
+    "isoCode": "WS",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Samoa"
+  },
+  {
+    "id": 233,
+    "isoCode": "YE",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Jemen"
+  },
+  {
+    "id": 234,
+    "isoCode": "YT",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Mayotte"
+  },
+  {
+    "id": 236,
+    "isoCode": "ZA",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "S\u00fcdafrika"
+  },
+  {
+    "id": 237,
+    "isoCode": "ZM",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Sambia"
+  },
+  {
+    "id": 238,
+    "isoCode": "ZW",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Zimbabwe"
+  },
+  {
+    "id": 239,
+    "isoCode": "US",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "USA"
+  },
+  {
+    "id": 247,
+    "isoCode": "GG",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Guernsey"
+  },
+  {
+    "id": 248,
+    "isoCode": "JE",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Jersey"
+  },
+  {
+    "id": 250,
+    "isoCode": "QA",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Katar"
+  },
+  {
+    "id": 251,
+    "isoCode": "TL",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Osttimor"
+  },
+  {
+    "id": 253,
+    "isoCode": "BL",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "St. Barth\u00e9lemy"
+  },
+  {
+    "id": 254,
+    "isoCode": "LC",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "St. Lucia"
+  },
+  {
+    "id": 256,
+    "isoCode": "BY",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Belarus"
+  },
+  {
+    "id": 259,
+    "isoCode": "XK",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Kosovo"
+  },
+  {
+    "id": 260,
+    "isoCode": "ME",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Montenegro"
+  },
+  {
+    "id": 261,
+    "isoCode": "RS",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Serbien"
+  },
+  {
+    "id": 262,
+    "isoCode": "IC",
+    "taxFree": 1,
+    "postCodeFree": 0,
+    "name": "Kanarische Inseln"
+  },
+  {
+    "id": 268,
+    "isoCode": "MM",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Myanmar"
+  },
+  {
+    "id": 271,
+    "isoCode": "AX",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "\u00c5landinseln"
+  },
+  {
+    "id": 272,
+    "isoCode": "BQ",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Bonaire, Sint Eustatius und Saba"
+  },
+  {
+    "id": 273,
+    "isoCode": "CW",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Cura\u00e7ao"
+  },
+  {
+    "id": 274,
+    "isoCode": "DO",
+    "taxFree": 1,
+    "postCodeFree": 1,
+    "name": "Dominikanische Republik"
+  },
+  {
+    "id": 275,
+    "isoCode": "IM",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Isle of Man"
+  },
+  {
+    "id": 276,
+    "isoCode": "MF",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "St. Martin"
+  },
+  {
+    "id": 277,
+    "isoCode": "SS",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "S\u00fcdsudan"
+  },
+  {
+    "id": 278,
+    "isoCode": "SX",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Sint Maarten"
+  },
+  {
+    "id": 279,
+    "isoCode": "UM",
+    "taxFree": 0,
+    "postCodeFree": 0,
+    "name": "Amerikanische \u00dcberseeinseln"
+  }
+]

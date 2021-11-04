@@ -25,7 +25,7 @@ class Dom {
    * @memberof Dom
    */
   append(node) {
-    if ('el' in node) node = node.el;
+    if (node.el) node = node.el;
 
     if (Element.prototype.append) {
       this.el.append(node);
@@ -120,6 +120,13 @@ class Dom {
    */
   position() {
     return this.el.getBoundingClientRect();
+  }
+
+  get dimensions() {
+    return {
+      width: this.el.offsetWidth,
+      height: this.el.offsetHeight,
+    };
   }
 
   /**
@@ -248,13 +255,15 @@ export function $(selector) {
  * @description
  * @param {string} element
  * @param {string} [className='']
+ * @param {Array} attributes
  * @return {Object} - {@link Dom}
  */
-$.create = (element, className = '') => {
+$.create = (element, className = '', attributes = []) => {
   const _element = document.createElement(element);
 
-  if (className) {
-    _element.classList.add(className);
+  if (className) _element.classList.add(className);
+  if (attributes.length) {
+    attributes.forEach(([key, value]) => _element.setAttribute(key, value));
   }
 
   return $(_element);

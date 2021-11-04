@@ -4,12 +4,24 @@
   right: 0;
   left: 0;
   display: flex;
-  height: $toolbar-height;
+  justify-content: space-between;
   padding: 7px 10px;
   border-top: 1px solid $border-color;
   border-bottom: 1px solid $border-color;
 
   .button {
     @include button($green);
+  }
+
+  .share {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    i {
+      pointer-events: none;
+      margin-right: 5px;
+      color: $green;
+    }
   }
 }
