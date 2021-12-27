@@ -25,3 +25,14 @@
     }
   }
 }
+
+.toolbar__container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+
+  .drop-down {
+    margin-bottom: 20px;
+  }
+}

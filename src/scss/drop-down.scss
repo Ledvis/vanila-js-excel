@@ -1,10 +1,13 @@
 .drop-down {
+  $height: 36px;
+
   position: relative;
   display: inline-flex;
   align-items: center;
   padding: 5px 10px;
   background-color: $white;
   border: 1px solid #000;
+  box-sizing: border-box;
 
   &__arrow {
     position: relative;
@@ -14,16 +17,25 @@
 
   &__menu {
     position: absolute;
-    top: 0;
+    z-index: 1;
+    top: calc(#{$height} - 5px);
     bottom: 0;
-    height: 30vh;
+    left: 0;
+    height: 60vh;
     padding: 5px 10px;
     background-color: $white;
     border: 1px solid #000;
     overflow-y: scroll;
   }
 
+  &__option {
+    &--active {
+      background-color: rgba(#0000fad8, 0.3);
+    }
+  }
+
   input {
+    width: 100%;
     background-color: transparent;
     border: none;
   }

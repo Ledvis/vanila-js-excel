@@ -10,9 +10,12 @@ import { $ } from '@/core/Dom';
 
 const styleKeys = Object.keys(DEFAULT_TOOLBAR_STYLES);
 
-const ARROW_KEY = { up: 'ArrowUp', right: 'ArrowRight', down: 'ArrowDown', left: 'ArrowLeft' };
+export const KEY_DOWN = 'ArrowDown';
+export const KEY_UP = 'ArrowUp';
+export const ENTER = 'Enter';
+export const ARROW_KEY = { up: KEY_UP, right: 'ArrowRight', down: KEY_DOWN, left: 'ArrowLeft' };
 export const ALLOWED_KEYBOARD_KEYS = {
-  enter: 'Enter',
+  enter: ENTER,
   tab: 'Tab',
   ...ARROW_KEY,
 };

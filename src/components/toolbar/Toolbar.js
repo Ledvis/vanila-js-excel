@@ -1,5 +1,5 @@
 import Base from '@/core/Base';
-import Dialog from '@/core/ui/Dialog';
+import DialogWrapper from '@/core/ui/Dialog-wrapper';
 import DropDown from '@/core/ui/Drop-down';
 import { DEFAULT_TOOLBAR_STYLES } from '@/core/constants';
 import { $ } from '@/core/Dom';
@@ -7,6 +7,7 @@ import createToolbar from '@/components/toolbar/createToolbar.template';
 import { updateStylesAction, saveCustomStyles } from '@/redux/actions';
 import { isEqual } from '@/core/utils';
 import countries from '@/countries.json';
+import { Input } from '@/core/ui/Input';
 
 /**
  * @description
@@ -31,17 +32,7 @@ export default class Toolbar extends Base {
     });
 
     this.state = DEFAULT_TOOLBAR_STYLES;
-    const select = new DropDown({
-      value: 'Ukraine',
-      options: countries.map((country) => {
-        return {
-          id: country.id,
-          value: country.name,
-        };
-      }),
-    });
-
-    this.dialog = new Dialog({ contentEl: select.$root.el });
+    this.appendDialog();
   }
 
   /**
@@ -112,7 +103,28 @@ export default class Toolbar extends Base {
     super.mounted();
 
     this.$on('table:groupSelected', (cellIds) => (this.selectedCellId = cellIds));
-    this.dialog.open();
+  }
+
+  destroyed() {
+    if (this.dialog.isOpened) this.dialog.close();
+  }
+
+  appendDialog() {
+    const input = new Input({ labelText: 'Some label text', shadowText: 'Some shadow text', isClearable: true });
+    const dropdown = new DropDown({
+      currentValue: 'Ukraine',
+      options: countries.map((country) => {
+        return {
+          id: country.id,
+          value: country.name,
+        };
+      }),
+    });
+    const container = $.create('div', 'toolbar__container')
+        .append(dropdown.$root)
+        .append(input.$root);
+
+    this.dialog = new DialogWrapper({ contentEl: container.el, title: 'Choose your country' });
   }
 
   /**

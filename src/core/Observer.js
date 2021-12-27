@@ -4,12 +4,18 @@
  * @class Observer
  */
 export default class Observer {
+  static #instance;
+
   /**
    *Creates an instance of Observer.
    * @memberof Observer
    */
   constructor() {
+    if (Observer.#instance) return Observer.#instance;
+
     this.events = {};
+    this.url = Math.random();
+    Observer.#instance = this;
   }
 
   /**

@@ -1,0 +1,59 @@
+.input {
+  position: relative;
+  display: inline-block;
+
+  &__label {
+    position: absolute;
+    left: 12px;
+    bottom: 10px;
+    transform-origin: left top;
+    transition: transform .36s cubic-bezier(.4,0,.2,1), color .36s cubic-bezier(.4,0,.2,1);
+    pointer-events: none;
+
+    &--up {
+      transform: translateY(-60%) scale(.75);
+      color: $green;
+    }
+  }
+
+  &__shadow {
+    position: absolute;
+    left: 12px;
+    bottom: 10px;
+    font-size: 14px;
+    color: $gray-2;
+    opacity: 0;
+    transition: opacity .36s cubic-bezier(.4,0,.2,1);
+    pointer-events: none;
+
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  &__native {
+    width: 100%;
+    min-width: 217px;
+    padding: 15px 9px 5px;
+    font-size: 16px;
+
+    &--clearable {
+      padding-right: 45px;
+    }
+  }
+
+  &__clear {
+    @include horizontal-center;
+
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    fill: $gray-2;
+    cursor: pointer;
+    transition: fill .1s cubic-bezier(.4,0,.2,1);
+
+    &:hover {
+      fill: grey;
+    }
+  }
+}

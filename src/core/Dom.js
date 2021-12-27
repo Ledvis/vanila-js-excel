@@ -47,7 +47,7 @@ class Dom {
       this.el.innerHTML = html;
       return this;
     } else {
-      return this.innerHTML;
+      return this.el.innerHTML;
     }
   }
 
@@ -62,7 +62,7 @@ class Dom {
       this.el.textContent = content;
       return this;
     } else {
-      return this.el.value?.trim() || this.el.textContent?.trim();
+      return this.el.value?.trim();
     }
   }
 

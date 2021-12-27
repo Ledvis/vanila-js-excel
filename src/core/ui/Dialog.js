@@ -1,5 +1,6 @@
 import { $ } from '@/core/Dom';
 import Base from '@/core/Base.js';
+import Observer from '@/core/Observer';
 
 /**
  * This class describes a dialog.
@@ -12,14 +13,18 @@ export default class Dialog extends Base {
    * @param {String} content - inner dialog slot
    * @memberof Dialog
    */
-  constructor({ contentEl }) {
+  constructor({ contentEl, title }) {
     const root = $.create('div', 'dialog');
 
-    super(root);
+    super(root, {
+      observer: new Observer,
+    });
+
+    this.title = title;
+    this.close = this.close.bind(this);
+    this.isOpened = false;
 
     this.$root.html(this.template).append(contentEl);
-
-    this.close = this.close.bind(this);
   }
 
   // eslint-disable-next-line valid-jsdoc
@@ -31,7 +36,10 @@ export default class Dialog extends Base {
    */
   get template() {
     return `
-        <button class="dialog__close material-icons"><i>close</i></button>
+        <div class="dialog__header">
+          <h3 class="dialog__title">${this.title}</h3>
+          <button class="dialog__close material-icons"><i>close</i></button>
+        </div>
       `;
   }
 
@@ -43,6 +51,7 @@ export default class Dialog extends Base {
   open() {
     document.body.append(this.$root.el);
     this.$root.find('.dialog__close').on('click', this.close);
+    this.isOpened = true;
   }
 
   /**
@@ -53,5 +62,6 @@ export default class Dialog extends Base {
   close() {
     document.body.removeChild(this.$root.el);
     this.$root.off('click', this.close);
+    this.isOpened = false;
   }
 }
