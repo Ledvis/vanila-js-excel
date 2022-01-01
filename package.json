@@ -97,6 +97,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.10.1",
     "normalize.css": "^8.0.1",
-    "reset-css": "^5.0.1"
+    "reset-css": "^5.0.1",
+    "string-similarity": "^4.0.4"
   }
 }

@@ -34,7 +34,30 @@
     }
   }
 
+  &__hint {
+    position: absolute;
+    z-index: 0;
+    left: 12px;
+    top: 8px;
+    display: flex;
+    color: $gray-2;
+
+    &-invisible {
+      visibility: hidden;
+    }
+
+    &-visible {
+      display: none;
+    }
+
+    &-visible--active {
+      display: inline;
+    }
+  }
+
   input {
+    position: relative;
+    z-index: 1;
     width: 100%;
     background-color: transparent;
     border: none;

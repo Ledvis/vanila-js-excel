@@ -1,3 +1,7 @@
+export function startsWithCapital(string = '') {
+  return string.charAt(0).toUpperCase() === string.charAt(0);
+}
+
 /**
  * @description
  * @export

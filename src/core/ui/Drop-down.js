@@ -1,7 +1,9 @@
+import { findBestMatch } from 'string-similarity';
 import { $ } from '@/core/Dom';
 import { KEY_DOWN, KEY_UP, ENTER } from '@/components/table/Table';
 import Base from '@/core/Base';
-import Observer from '../Observer';
+import Observer from '@/core/Observer';
+import { debounce } from '@/core/utils';
 const KEYS = [KEY_DOWN, KEY_UP, ENTER];
 
 export default class DropDown extends Base {
@@ -17,33 +19,42 @@ export default class DropDown extends Base {
     this.selectedOptionIndex = 0;
     this.currentOption = options.find(({ name }) => name?.toLowerCase() === currentValue?.toLowerCase()) || {};
     this.options = options;
+    this.hint = [];
+    this.autoCompleteValue = '';
     this.$menu = this.menuTemplate;
     this.$root.html(this.template).append(this.$menu.el);
 
     // binding
-    this.updateArrowPosition = this.updateArrowPosition.bind(this);
+    this.openMenu = this.openMenu.bind(this);
     this.onMenuClick = this.onMenuClick.bind(this);
     this.onMenuKeydown = this.onMenuKeydown.bind(this);
     this.onFocusLost = this.onFocusLost.bind(this);
+    this.onSearch = this.onSearch.bind(this);
+    this.onInputAutoComplete = this.onInputAutoComplete.bind(this);
 
     // children
     this.$inputDomEl = this.$root.find(`[id='${this.inputId}']`);
     this.menuOptions = this.$menu.findAll('.drop-down__option');
     this.$arrow = this.$root.find('.drop-down__arrow');
+    this.$hintInvisible = this.$root.find('.drop-down__hint-invisible');
+    this.$hintVisible = this.$root.find('.drop-down__hint-visible');
 
     this.init();
   }
 
   init() {
-    const $option = this.$root.find(`[data-option-index="${this.selectedOptionIndex}"]`);
-    this.updateInputValue($option.el.innerText.trim());
-    this.hightLightActiveOption($option);
+    this.$currentOption = this.$root.find(`[data-option-index="${this.selectedOptionIndex}"]`);
+    this.updateInputValue(this.$currentOption.el.innerText.trim());
+    this.hightLightActiveOption(this.$currentOption);
     this.addListeners();
+    // this.updateUIstate = debounce(this.updateUIstate, 100);
   }
 
   addListeners() {
-    this.$arrow.on('click', this.updateArrowPosition);
+    this.$arrow.on('click', this.openMenu);
+    this.$inputDomEl.on('input', this.onSearch);
     this.$inputDomEl.on('blur', (event) => this.onFocusLost(event, 'input'));
+    this.$inputDomEl.on('keydown', this.onInputAutoComplete);
     this.$menu.on('blur', (event) => this.onFocusLost(event, 'menu'));
     this.$menu.on('keydown', this.onMenuKeydown);
     this.$menu.on('click', this.onMenuClick );
@@ -61,6 +72,10 @@ export default class DropDown extends Base {
     return `
           ${this.prepend ? `<div>${this.prepend}</div>` : ''}
           <input value="${this.currentOption?.name}" id="${this.inputId}" />
+          <div class="drop-down__hint">
+            <span class="drop-down__hint-invisible"></span>
+            <span class="drop-down__hint-visible"></span>
+          </div>
           <span tabindex="0" class="drop-down__arrow material-icons">
             arrow_drop_down
           </span>
@@ -71,7 +86,7 @@ export default class DropDown extends Base {
     return $.create('div', 'drop-down__menu', [['tabindex', '0']]).html(`
       <ul>
         ${this.options.map(
-      (option, index) => `<li class="drop-down__option" data-option-index="${index}">
+      (option, index) => `<li class="drop-down__option" id="${option.value}" data-option-index="${index}">
           ${option.value}
         </li>`).join('')}
       </ul>
@@ -94,8 +109,14 @@ export default class DropDown extends Base {
     return innerText === 'arrow_drop_up';
   }
 
-  updateArrowPosition() {
-    this.updateUIstate(!this.isExpanded());
+  async openMenu() {
+    const isOpened = this.isExpanded();
+
+    this.updateUIstate(!isOpened);
+
+    if (!isOpened) {
+      this.$currentOption.el.scrollIntoView();
+    }
   }
 
   onMenuKeydown(event) {
@@ -111,13 +132,13 @@ export default class DropDown extends Base {
         this.selectedOptionIndex = 0;
       }
 
-      const $option = this.$root.find(`[data-option-index="${this.selectedOptionIndex}"]`);
+      this.$currentOption = this.$root.find(`[data-option-index="${this.selectedOptionIndex}"]`);
 
-      this.hightLightActiveOption($option);
-      this.$menu.el.scrollTop = $option.el.offsetTop - 100;
+      this.hightLightActiveOption(this.$currentOption);
+      this.$menu.el.scrollTop = this.$currentOption.el.offsetTop - 100;
 
       if (event.key === ENTER) {
-        const value = $option.el.innerText;
+        const value = this.$currentOption.el.innerText;
         this.updateInputValue(value.trim());
         this.updateUIstate(false);
       }
@@ -142,11 +163,32 @@ export default class DropDown extends Base {
   onFocusLost({ relatedTarget }, issuer) {
     if (this.isExpanded()) {
       if (issuer === 'input' && relatedTarget !== this.$menu.el) {
-        this.updateUIstate();
+        this.updateUIstate(false);
       } else if (issuer === 'menu' && relatedTarget !== this.$arrow.el) {
-        this.updateUIstate();
+        this.updateUIstate(false);
       }
     }
+  }
+
+  onSearch({ target }) {
+    const { bestMatch } = findBestMatch(target.value?.toLowerCase(), this.options.map(({ value }) => value));
+
+    if (bestMatch.rating >= 0.5) {
+      const visibleHint = [...bestMatch.target].splice(target.value.length).join('');
+
+      this.$hintInvisible.el.innerText = target.value;
+      this.$hintVisible.el.innerText = visibleHint;
+      this.$hintVisible.addClass('drop-down__hint-visible--active');
+      this.autoCompleteValue = bestMatch.target;
+    } else {
+      this.clearSearchHint();
+    }
+  }
+
+  clearSearchHint() {
+    this.$hintInvisible.el.innerText = '';
+    this.$hintVisible.el.innerText = '';
+    this.$hintVisible.removeClass('drop-down__hint-visible--active');
   }
 
   hightLightActiveOption($target) {
@@ -161,5 +203,16 @@ export default class DropDown extends Base {
 
     this.$inputDomEl.el.value = this.currentOption.name;
     this.$emit('dropDown:inputChaged', value);
+  }
+
+  onInputAutoComplete({ key }) {
+    if (key === ENTER && this.autoCompleteValue) {
+      this.updateInputValue(this.autoCompleteValue);
+      this.$currentOption = this.$root.find(`#${this.autoCompleteValue}`);
+
+      this.hightLightActiveOption(this.$currentOption);
+
+      this.clearSearchHint();
+    }
   }
 }
